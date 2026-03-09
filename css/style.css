@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* font family を google font サイトから取ってくる */
+
+
+/* 変数を入れる */
+:root {
+  --color-main: ;
+  --font-: ;
+}
+
+/* --------------------------
+base
+-------------------------- */
+
+html {
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: ;
+  word-break: break-all;
+  font-size: 10px;
+}
+body {
+  font-family: ;
+  font-weight: ;
+  color: var(--color-main);
+  font-size: ;
+  /* calc(行間 / font-size) */
+  line-height: ;
+  letter-spacing: 0;
+}
+
+/* --------------------------
+common
+-------------------------- */
+/* PC、 SPの非表示 */
+@media (max-width: 767px) {
+  .pc {
+    display: none !important;
+  }
+}
+@media (min-width:768px ) {
+  .sp {
+    display: none !important;
+  }
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#container {
+	width: 100%;
+	overflow: hidden;
+}
