@@ -8,6 +8,7 @@
     <meta name="keywords" content="キーワード">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   </head>
   <body>
     <div class="container">
@@ -56,6 +57,70 @@
       <!-- main -->
       <main class="main">
 
+        <!-- fv -->
+        <div class="fv">
+          <div class="splide" role="group">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="./img/FirstView01.jpg">
+                    <img src="./img/SP_FirstView-1.jpg" alt="">
+                  </picture>
+                </li>
+                <li class="splide__slide">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="./img/FirstView02.jpg">
+                    <img src="./img/SP_FirstView-2.jpg" alt="">
+                  </picture>
+                </li>
+                <li class="splide__slide">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="./img/FirstView03.jpg">
+                    <img src="./img/SP_FirstView-3.jpg" alt="">
+                  </picture>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="fv__contents">
+            <div class="fv__contents--text">
+              <h2>
+                永遠も。<br class="sp">瞬間も。<br>
+                あなたと共に。
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <section id="about" class="about">
+          <div class="about__image">
+            <picture>
+              <source media="(min-width: 768px)" srcset="./img/About.jpg">
+              <img src="./img/SP_About.jpg" alt="">
+            </picture>
+          </div>
+          <div class="about__textarea">
+            <div class="about__title">
+              <h2>伝統とイマを繋ぐ</h2>
+            </div>
+            <div class="about__text">
+              <p>
+                <span>古来から伝わる伝統文化</span>
+                <span>昔からそこにある材料</span>
+                <span>その土地に長い間かけて</span>
+                <span>最適化してきた</span>
+                <span>たくさんのヒントを</span>
+                <span>イマを生きる私たちの</span>
+                <span>心地よさに取り入れ</span>
+                <span>新たな技術革新を</span>
+                <span>起こし続ける会社です</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
         
       </main>
 
@@ -64,6 +129,8 @@
     </div>
 
     <script src="./js/jquery-4.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
