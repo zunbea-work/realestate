@@ -24,3 +24,21 @@ $(function(){
   });
 });
 
+var goTop = $("#fas-area");
+
+goTop.hide();
+
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 80) {
+    goTop.fadeIn(300);
+  } else {
+    goTop.fadeOut(300);
+  }
+});
+
+goTop.click(function () {
+  $("body,html").animate({
+    scrollTop: 0
+  }, 500);
+  return false;
+});

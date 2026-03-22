@@ -70,6 +70,13 @@ img {
   height: auto;
   display: block;
 }
+a {
+  transition: opacity 0.4s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
 .container {
 	width: 100%;
 	overflow: hidden;
@@ -96,7 +103,72 @@ img {
     font-size: map.get($font-sizes, md);
     line-height: calc(33 / 20);
     letter-spacing: 30%;
-    padding-top: 0.6rem;
+    margin-top: 0.6rem;
+    display: block;
+  }
+}
+
+// Top戻り矢印
+#fas-area {
+  position: fixed;
+  bottom: 6rem;
+  right: 6rem;
+  width: 6.8rem;
+  height: 6.8rem;
+  background-color: $main-color;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    right: 2rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .arrow {
+    position: relative;
+    width: 2.3rem;
+    height: 1.6rem;
+
+    @media (max-width: 767px) {
+      width: 1.7rem;
+      height: 1.2rem;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 40%;
+      transform: matrix(-50%);
+      height: 0.5rem;
+      width: 100%;
+      background-color: $white;
+
+      @media (max-width: 767px) {
+        height: 0.4rem;
+      }
+    }
+
+    &::before {
+      left: 35%;
+      transform: rotate(50deg);
+      transform-origin: top;
+      border-radius: 0.5rem;
+    }
+
+    &::after {
+      right: 35%;
+      transform: rotate(-50deg);
+      transform-origin: top;
+      border-radius: 0.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -245,7 +317,6 @@ img {
     a {
       color: $white;
       padding-block: 3rem 3.2rem;
-      transition: opacity 0.4s;
       position: relative;
 
       &::after {
@@ -262,8 +333,6 @@ img {
       }
 
       &:hover {
-        opacity: 0.7;
-
         &::after {
           transform: scale(1, 1);
         }
@@ -371,7 +440,7 @@ img {
       }
       span {
         display: block;
-        
+
         &:not(:first-child) {
           padding-right: 3rem;
 
@@ -709,11 +778,6 @@ img {
       display: block;
       margin-left: auto;
       max-width: 43rem;
-      transition: opacity 0.4s;
-
-      &:hover {
-        opacity: 0.7;
-      }
 
       &::before {
         content: "";
@@ -804,6 +868,7 @@ img {
       margin-top: 3rem;
       padding: 1.9rem 2rem 1.2rem;
       height: 20.2rem;
+      text-align: left;
     }
 
     &--inner {
@@ -888,14 +953,10 @@ img {
 
   &-name,
   &-email,
+  &-gender,
   &-inquiry {
     display: flex;
     align-items: center;
-
-    @media (max-width: 767px) {
-      flex-direction: column;
-      align-items: normal;
-    }
 
     dt {
       width: 17rem;
@@ -905,13 +966,20 @@ img {
     }
   }
 
-  &-gender {
-    display: flex;
-    align-items: center;
+  &-name,
+  &-email,
+  &-inquiry {
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: normal;
+    }
+  }
 
+  &-gender {
     dt {
       @media (max-width: 767px) {
         padding-right: 5rem;
+        width: 9rem;
       }
     }
   }
@@ -1067,6 +1135,13 @@ img {
     color: $white;
     font-size: map.get($font-sizes, md);
     line-height: calc(33 / 20);
+    border: solid 0.1rem $main-color;
+    transition: all 0.4s;
+    
+    &:hover {
+      background-color: $white;
+      color: $main-color;
+    }
   }
 }
 
@@ -1147,5 +1222,56 @@ dd {
   }
 }
 
+// footer
+.footer {
+  &__inner {
+    padding: 8rem 3rem;
+    text-align: center;
+    
+    h3 {
+      font-size: map.get($font-sizes, md);
+      line-height: calc(33 / 20);
+    }
 
+    .under-line {
+      border-bottom: 0.1rem solid $black;
+      width: 72.2rem;
+      margin: 2.7rem auto 0;
+    }
+  }
+
+  &__nav {
+    margin-top: 2.7rem;
+
+    &--list {
+      display: flex;
+      justify-content: center;
+      column-gap: 5rem;
+    }
+    &--link {
+      font-size: map.get($font-sizes, no);
+      line-height: calc(33 / 18);
+    }
+  }
+
+  &__sns {
+    margin-top: 2.6rem;
+
+    &--list {
+      display: flex;
+      justify-content: center;
+      column-gap: 3rem;
+      align-items: center;
+    }
+  }
+
+  &__copyright {
+    background-color: $main-color;
+    color: $white;
+    text-align: center;
+    padding-block: 3rem 2.9rem;
+    font-size: map.get($font-sizes, md);
+    line-height: calc(33 / 20);
+  }
+}
 
