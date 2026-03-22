@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: YuMincho, "Hiragino Mincho ProN", sans-serif;
+  font-family: "YuMincho", "Hiragino Mincho ProN", sans-serif;
   font-weight: 500;
   font-size: 1.8rem;
   /* calc(行間 / font-size) */
@@ -356,12 +356,12 @@ a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-49%, -43%);
+          transform: translate(-49%, -43%);
   font-size: 4rem;
   line-height: 1.75;
   font-weight: 600;
-  letter-spacing: 21.4285714286%;
+  letter-spacing: 30%;
   color: #FFF;
 }
 
@@ -418,12 +418,12 @@ a:hover {
   font-size: 2.7777777778vw;
   line-height: 1;
   letter-spacing: 0.5rem;
-  padding-left: 5.5555555556vw;
+  margin-left: 5.5555555556vw;
 }
 @media (max-width: 767px) {
   .about__title {
     font-size: 2.5rem;
-    padding-left: 0;
+    margin-left: 0;
     letter-spacing: 0.5rem;
   }
 }
@@ -448,11 +448,11 @@ a:hover {
   display: block;
 }
 .about__text p span:not(:first-child) {
-  padding-right: 3rem;
+  margin-right: 3rem;
 }
 @media (max-width: 767px) {
   .about__text p span:not(:first-child) {
-    padding-right: 1rem;
+    margin-right: 1rem;
   }
 }
 
@@ -473,71 +473,84 @@ a:hover {
   }
 }
 .service__contents + .service__contents {
-  margin-top: 13.1rem;
+  margin-top: 12.7rem;
 }
 @media (max-width: 767px) {
   .service__contents + .service__contents {
     margin-top: 5rem;
   }
 }
-.service .contents-left {
+.service .contents-first,
+.service .contents-third {
   position: relative;
 }
 @media (max-width: 767px) {
-  .service .contents-left {
+  .service .contents-first,
+  .service .contents-third {
     position: static;
   }
 }
-.service .contents-left .service__textarea {
+.service .contents-first .service__textarea,
+.service .contents-third .service__textarea {
   position: absolute;
   text-align: right;
   right: 0;
 }
 @media (max-width: 767px) {
-  .service .contents-left .service__textarea {
+  .service .contents-first .service__textarea,
+  .service .contents-third .service__textarea {
     position: static;
     text-align: left;
   }
 }
-.service .contents-left .service__textarea--inner {
+.service .contents-first .service__textarea--inner {
   text-align: left;
   padding: 5rem 2.7rem 4.2rem 0;
 }
 @media (max-width: 767px) {
-  .service .contents-left .service__textarea--inner {
+  .service .contents-first .service__textarea--inner {
     padding: 2rem 0 1.2rem 2rem;
   }
 }
-.service .contents-right {
+.service .contents-third .service__textarea--inner {
+  text-align: left;
+  padding: 5rem 3.6rem 4.2rem 0;
+}
+@media (max-width: 767px) {
+  .service .contents-third .service__textarea--inner {
+    padding: 2rem 0 1.2rem 2rem;
+  }
+}
+.service .contents-second {
   position: relative;
 }
 @media (max-width: 767px) {
-  .service .contents-right {
+  .service .contents-second {
     position: static;
   }
 }
-.service .contents-right .service__image {
+.service .contents-second .service__image {
   margin-left: auto;
   text-align: right;
 }
 @media (max-width: 767px) {
-  .service .contents-right .service__image {
+  .service .contents-second .service__image {
     text-align: left;
   }
 }
-.service .contents-right .service__textarea {
+.service .contents-second .service__textarea {
   position: absolute;
 }
 @media (max-width: 767px) {
-  .service .contents-right .service__textarea {
+  .service .contents-second .service__textarea {
     position: static;
   }
 }
-.service .contents-right .service__textarea--inner {
-  padding: 5rem 0 4.2rem 2.7rem;
+.service .contents-second .service__textarea--inner {
+  padding: 5rem 0 4.2rem 4rem;
 }
 @media (max-width: 767px) {
-  .service .contents-right .service__textarea--inner {
+  .service .contents-second .service__textarea--inner {
     padding: 2rem 0 1.2rem 2rem;
   }
 }
@@ -555,11 +568,11 @@ a:hover {
 }
 .service__image p {
   font-size: 1.6rem;
-  padding-top: 1.9rem;
+  margin-top: 1.9rem;
 }
 @media (max-width: 767px) {
   .service__image p {
-    padding-block: 0.5rem 0.6rem;
+    margin-block: 0.5rem 0.6rem;
   }
 }
 
@@ -611,7 +624,7 @@ a:hover {
   }
 }
 .works__contents {
-  margin-top: 6.8rem;
+  margin-top: 6.3rem;
 }
 @media (max-width: 767px) {
   .works__contents {
@@ -754,7 +767,7 @@ a:hover {
   background-color: #4D9600;
   color: #FFF;
   font-size: 2rem;
-  padding: 0.9rem 2rem 0.8rem;
+  padding: 0.9rem 2rem 0.5rem;
 }
 .news__contents-list {
   padding: 0 2rem 2rem;
@@ -768,6 +781,12 @@ a:hover {
           column-gap: 6.3888888889vw;
   padding-block: 0 1.2rem;
   border-bottom: 1px solid #4D9600;
+}
+.news__contents-item + .news__contents-item dt {
+  padding-top: 1.3rem;
+}
+.news__contents-item + .news__contents-item dd {
+  padding-top: 2rem;
 }
 .news__contents-item dt {
   font-size: 1.6rem;
@@ -856,13 +875,13 @@ a:hover {
 .company-textarea {
   position: absolute;
   text-align: right;
-  top: 24.2592592593vw;
+  top: 26.7rem;
   right: 0;
   width: 50rem;
   height: 26.2rem;
   background-color: #4D9600;
   z-index: 0;
-  padding-block: 4.9rem 4.2rem;
+  padding: 4.9rem 0.5rem 4.2rem;
 }
 @media (max-width: 767px) {
   .company-textarea {
@@ -890,7 +909,7 @@ a:hover {
   line-height: 1.5625;
   font-weight: 600;
   width: 27.5rem;
-  padding-top: 0.7rem;
+  margin-top: 0.7rem;
 }
 .company-textarea__address span {
   display: block;
@@ -898,7 +917,7 @@ a:hover {
 .company-textarea__tel {
   font-weight: 600;
   width: 27.5rem;
-  padding-top: 1.2rem;
+  margin-top: 1.2rem;
 }
 .company-textarea__tel span {
   display: inline-block;
@@ -914,7 +933,7 @@ a:hover {
 .company-textarea__mail {
   font-size: 1.6rem;
   line-height: 1.5625;
-  padding-top: 1.9rem;
+  margin-top: 1.3rem;
 }
 
 .contact {
@@ -1000,7 +1019,7 @@ a:hover {
   background-color: #4D9600;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   position: absolute;
-  right: 1.7rem;
+  right: 2.2rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -1068,10 +1087,10 @@ a:hover {
   pointer-events: none;
 }
 .form-question dd {
-  margin-top: 1.3rem;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  row-gap: 2rem;
+  row-gap: 1.5rem;
 }
 @media (max-width: 767px) {
   .form-question dd {
@@ -1123,7 +1142,7 @@ a:hover {
 }
 .form__button {
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 7.8rem;
 }
 @media (max-width: 767px) {
   .form__button {
@@ -1201,6 +1220,7 @@ dd input::placeholder {
 }
 
 .conditions {
+  margin-top: 1rem;
   display: block;
   max-width: 80rem;
   width: 100%;

@@ -43,7 +43,7 @@ html {
   font-size: 10px;
 }
 body {
-  font-family: YuMincho, "Hiragino Mincho ProN", sans-serif;
+  font-family: "YuMincho", "Hiragino Mincho ProN", sans-serif;
   font-weight: 500;
   font-size: 1.8rem;
   /* calc(行間 / font-size) */
@@ -366,11 +366,11 @@ a {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-49%, -43%);
       font-size: map.get($font-sizes, xxl);
       line-height: calc(70 / 40);
       font-weight: 600;
-      letter-spacing: calc(30 / 140 * 100%);
+      letter-spacing: 30%;
       color: $white;
     }
   }
@@ -417,11 +417,11 @@ a {
     font-size: calc(30 / 1080 * 100vw);
     line-height: calc(30 / 30);
     letter-spacing: (28rem / 8 - 3rem);
-    padding-left: calc(60 / 1080 * 100vw);
+    margin-left: calc(60 / 1080 * 100vw);
 
     @media (max-width: 767px) {
       font-size: map.get($font-sizes, lg);
-      padding-left: 0;
+      margin-left: 0;
       letter-spacing: (24rem / 8 - 2.5rem);
     }
   }
@@ -442,10 +442,10 @@ a {
         display: block;
 
         &:not(:first-child) {
-          padding-right: 3rem;
+          margin-right: 3rem;
 
           @media (max-width: 767px) {
-            padding-right: 1rem;
+            margin-right: 1rem;
           }
         }
       }
@@ -469,7 +469,7 @@ a {
     }
 
     & + & {
-      margin-top: 13.1rem;
+      margin-top: 12.7rem;
 
       @media (max-width: 767px) {
         margin-top: 5rem;
@@ -477,7 +477,8 @@ a {
     }
   }
 
-  .contents-left {
+  .contents-first,
+  .contents-third {
     position: relative;
 
     @media (max-width: 767px) {
@@ -493,7 +494,11 @@ a {
         position: static;
         text-align: left;
       }
+    }
+  }
 
+  .contents-first {
+    .service__textarea {
       &--inner {
         text-align: left;
         padding: 5rem 2.7rem 4.2rem 0;
@@ -505,7 +510,20 @@ a {
     }
   }
 
-  .contents-right {
+  .contents-third {
+    .service__textarea {
+      &--inner {
+        text-align: left;
+        padding: 5rem 3.6rem 4.2rem 0;
+
+        @media (max-width: 767px) {
+          padding: 2rem 0 1.2rem 2rem;
+        }
+      }
+    }
+  }
+
+  .contents-second {
     position: relative;
 
     @media (max-width: 767px) {
@@ -529,7 +547,7 @@ a {
       }
 
       &--inner {
-        padding: 5rem 0 4.2rem 2.7rem;
+        padding: 5rem 0 4.2rem 4rem;
 
         @media (max-width: 767px) {
           padding: 2rem 0 1.2rem 2rem;
@@ -551,10 +569,10 @@ a {
 
   p {
     font-size: map.get($font-sizes, sm);
-    padding-top: 1.9rem;
+    margin-top: 1.9rem;
 
     @media (max-width: 767px) {
-      padding-block: 0.5rem 0.6rem;
+      margin-block: 0.5rem 0.6rem;
     }
   }
 }
@@ -605,7 +623,7 @@ a {
   }
 
   &__contents {
-    margin-top: 6.8rem;
+    margin-top: 6.3rem;
 
     @media (max-width: 767px) {
       margin-top: 3.8rem;
@@ -741,7 +759,7 @@ a {
       background-color: $main-color;
       color: $white;
       font-size: map.get($font-sizes, md);
-      padding: 0.9rem 2rem 0.8rem;
+      padding: 0.9rem 2rem 0.5rem;
     }
 
     &-list {
@@ -755,6 +773,16 @@ a {
       column-gap: calc(69 / 1080 * 100vw);
       padding-block: 0 1.2rem;
       border-bottom: 1px solid $main-color;
+
+      & + & {
+        dt {
+          padding-top: 1.3rem;
+        }
+
+        dd {
+          padding-top: 2rem;
+        }
+      }
 
       dt {
         font-size: map.get($font-sizes, sm);
@@ -854,13 +882,13 @@ a {
   &-textarea {
     position: absolute;
     text-align: right;
-    top: calc(262 / 1080 * 100vw);
+    top: 26.7rem;
     right: 0;
     width: 50rem;
     height: 26.2rem;
     background-color: $main-color;
     z-index: 0;
-    padding-block: 4.9rem 4.2rem;
+    padding: 4.9rem  0.5rem 4.2rem;
 
     @media (max-width: 767px) {
       position: static;
@@ -887,7 +915,7 @@ a {
       font-size: map.get($font-sizes, sm);
       line-height: calc(25 / 16);
       @include company-text;
-      padding-top: 0.7rem;
+      margin-top: 0.7rem;
 
       span {
         display: block;
@@ -896,7 +924,7 @@ a {
 
     &__tel {
       @include company-text;
-      padding-top: 1.2rem;
+      margin-top: 1.2rem;
 
       span {
         display: inline-block;
@@ -915,7 +943,7 @@ a {
     &__mail {
       font-size: map.get($font-sizes, sm);
       line-height: calc(25 / 16);
-      padding-top: 1.9rem;
+      margin-top: 1.3rem;
     }
   }
 }
@@ -1013,7 +1041,7 @@ a {
       background-color: $main-color;
       clip-path: polygon(0 0, 100% 0, 50% 100%);
       position: absolute;
-      right: 1.7rem;
+      right: 2.2rem;
       top: 50%;
       transform: translateY(-50%);
       transform-origin: center;
@@ -1073,10 +1101,10 @@ a {
       pointer-events: none;
     }
     dd {
-      margin-top: 1.3rem;
+      margin-top: 1rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      row-gap: 2rem;
+      row-gap: 1.5rem;
 
       @media (max-width: 767px) {
         grid-template-columns: repeat(2, 1fr);
@@ -1123,7 +1151,7 @@ a {
 
   &__button {
     text-align: center;
-    margin-top: 8rem;
+    margin-top: 7.8rem;
 
     @media (max-width: 767px) {
       margin-top: 5rem;
@@ -1187,6 +1215,7 @@ dd {
   }
 }
 .conditions {
+  margin-top: 1rem;
   display: block;
   max-width: 80rem;
   width: 100%;
