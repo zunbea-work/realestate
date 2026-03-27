@@ -525,3 +525,128 @@ a:hover {
 .service .contents-third .service__textarea {
   padding: 5rem 3.8rem 4.2rem 0;
 }
+
+.works {
+  padding: 8rem 3rem 9.7rem;
+}
+@media (max-width: 767px) {
+  .works {
+    padding: 5rem 3rem 4.2rem;
+  }
+}
+.works__contents {
+  margin-top: 6.3rem;
+}
+@media (max-width: 767px) {
+  .works__contents {
+    margin-top: 3.8rem;
+  }
+}
+.works__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 3.7037037037vw;
+     -moz-column-gap: 3.7037037037vw;
+          column-gap: 3.7037037037vw;
+}
+@media (max-width: 767px) {
+  .works__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2.2rem;
+  }
+}
+.works__text {
+  font-size: 1.4814814815vw;
+  line-height: 1.5625;
+  padding-top: 1.9rem;
+}
+@media (max-width: 767px) {
+  .works__text {
+    font-size: 1.6rem;
+    padding-top: 0.9rem;
+  }
+}
+
+.modal-open {
+  cursor: pointer;
+}
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  z-index: 999;
+}
+.modal-container::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-body {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #FFF;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 45rem;
+  padding: 1.5rem 1.5rem 0.6rem;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .modal-body {
+    max-width: 31.5rem;
+    padding: 2rem 2.1rem 1.4rem 2rem;
+  }
+}
+.modal-content {
+  font-size: 1.6rem;
+  line-height: 1.5625;
+  position: relative;
+}
+.modal-content p {
+  padding-top: 0.9rem;
+}
+@media (max-width: 767px) {
+  .modal-content p {
+    padding-top: 0.7rem;
+  }
+}
+.modal-content span {
+  position: absolute;
+  display: block;
+  top: -0.7rem;
+  right: -1.3rem;
+  width: 1.5rem;
+  height: 0.1rem;
+  background: #000;
+  cursor: pointer;
+}
+.modal-content span:nth-of-type(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.modal-content span:nth-of-type(2) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
