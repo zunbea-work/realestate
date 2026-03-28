@@ -330,12 +330,12 @@
 
         <section id="news" class="news bg-color">
           <div class="inner">
-            <!-- <div class="section-title">
+            <div class="section-title">
               <span class="en">NEWS</span>
               <span class="ja">お知らせ</span>
-            </div> -->
+            </div>
             <div class="news__contents">
-              <!-- <article class="news__contents-lists">
+              <article class="news__contents-lists">
                 <div class="news__contents-title">
                   <h3>お知らせ</h3>
                 </div>
@@ -372,9 +372,9 @@
                     </p>
                   </div>
                 </div>
-              </article> -->
+              </article>
 
-              <!-- <article class="news__contents-lists">
+              <article class="news__contents-lists">
                 <div class="news__contents-title">
                   <h3>ブログ</h3>
                 </div>
@@ -411,12 +411,12 @@
                     </p>
                   </div>
                 </div>
-              </article> -->
+              </article>
             </div>
           </div>
         </section>
 
-        <!-- <section id="campany" class="company">
+        <section id="campany" class="company">
           <div class="inner">
             <div class="section-title">
               <span class="en">COMPANY</span>
@@ -429,10 +429,10 @@
                 </div>
               </div>
               <div class="company__contents-textarea company-textarea">
-                <div class="company-textarea--inner">
-                  <address>
+                <div class="company-textarea--wrapper">
+                  <div class="company-textarea--inner">
                     <div class="company-textarea__title">
-                      <p>株式会社 北村建設興業</p>
+                      <h3>株式会社 北村建設興業</h3>
                     </div>
                     <address>
                       <div class="company-textarea__address">
@@ -448,16 +448,16 @@
                         <p>Mail　<span><a href="mailto:info@example.com">info@example.com</a></span></p>
                       </div>
                     </address>
-                  </address>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section> -->
+        </section>
 
         <section id="contact" class="contact bg-color">
           <div class="inner">
-            <!-- <div class="section-title">
+            <div class="section-title">
               <span class="en">CONTACT</span>
               <span class="ja">お問い合わせ</span>
             </div>
@@ -465,48 +465,48 @@
               <p>
                 ３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。
               </p>
-            </div> -->
+            </div>
             <form action="#" method="post" class="form">
 
               <!-- NAME -->
-              <!-- <dl class="form__item form-name">
+              <dl class="form__item form-name">
                 <dt>
-                  <label for="name" class="form-label">お名前 *</label>
+                  <label for="name" class="form__item-label">お名前 *</label>
                 </dt>
                 <dd>
-                  <input type="text" id="name" name="name" placeholder="例：北村太郎" required>
+                  <input type="text" id="name" class="form__item-input" name="name" placeholder="例：北村太郎" required>
                 </dd>
-              </dl> -->
+              </dl>
 
               <!-- GENDER -->
-              <!-- <dl class="form__item form-gender">
+              <dl class="form__item form-gender">
                 <dt>
-                  <label for="gender" class="form-label">性別</label>
-                </dt>
-                <dd class="form__item-gender">
-                  <label>
-                    <input type="radio" name="gender" value="male" checked>男性
-                  </label>
-                  <label>
-                    <input type="radio" name="gender" value="female">女性
-                  </label>
-                </dd>
-              </dl> -->
-
-              <!-- EMAIL -->
-              <!-- <dl class="form__item form-email">
-                <dt>
-                  <label for="email" class="form-label">メールアドレス *</label>
+                  <label for="gender" class="form__item-label">性別</label>
                 </dt>
                 <dd>
-                  <input type="email" id="email" name="email" placeholder="例：aaaaaaaa@gmail.com" required>
+                  <label>
+                    <input type="radio" name="gender" value="male" class="form__item-gender" checked>男性
+                  </label>
+                  <label>
+                    <input type="radio" name="gender" value="female" class="form__item-gender">女性
+                  </label>
                 </dd>
-              </dl> -->
+              </dl>
+
+              <!-- EMAIL -->
+              <dl class="form__item form-email">
+                <dt>
+                  <label for="email" class="form__item-label">メールアドレス *</label>
+                </dt>
+                <dd>
+                  <input type="email" id="email" class="form__item-input" name="email" placeholder="例：aaaaaaaa@gmail.com" required>
+                </dd>
+              </dl>
 
               <!-- INQUIRY -->
-              <!-- <dl class="form__item form-inquiry">
+              <dl class="form__item form-inquiry">
                 <dt>
-                  <label for="inquiry" class="form-label">問い合わせ種別</label>
+                  <label for="inquiry" class="form__item-label">問い合わせ種別</label>
                 </dt>
                 <dd>
                   <select name="inquiry" id="inquiry" class="form__item-inquiry">
@@ -515,20 +515,20 @@
                     <option value="other">その他</option>
                   </select>
                 </dd>
-              </dl> -->
+              </dl>
 
               <!-- MESSAGE -->
-              <!-- <dl class="form__item form-message">
+              <dl class="form-message">
                 <dt>
-                  <label for="message" class="form-label">内容 *</label>
+                  <label for="message" class="form__item-label">内容 *</label>
                 </dt>
                 <dd>
-                  <textarea name="message" id="message"></textarea>
+                  <textarea name="message" id="message" class="form-textarea"></textarea>
                 </dd>
-              </dl> -->
+              </dl>
 
               <!-- QUESTION -->
-              <!-- <dl class="form__item form-question">
+              <dl class="form-question">
                 <dt>
                   <label for="question" class="form-label">何を見て当社HPを知りましたか？ (複数回答可)　*</label>
                 </dt>
@@ -574,10 +574,10 @@
                     その他
                   </label>
                 </dd>
-              </dl> -->
+              </dl>
 
               <!-- CONDITIONS -->
-              <!-- <dl class="form__item">
+              <dl class="form-conditions">
                 <dt>
                   <label for="terms" class="form-label">個人情報保護方針</label>
                 </dt>
@@ -659,12 +659,12 @@
                     </p>
                   </div>
                 </dd>
-              </dl> -->
+              </dl>
 
               <!-- submit -->
-              <!-- <div class="form__button">
+              <div class="form__button">
                 <input class="form__submit" type="submit" value="内容に同意して送信">
-              </div> -->
+              </div>
             </form>
           </div>
         </section>
@@ -672,7 +672,7 @@
 
       <!-- footer -->
       <footer class="footer">
-        <!-- <div class="footer__inner">
+        <div class="footer__inner">
           <h3>株式会社 北村建設興業</h3>
           <div class="under-line"></div>
           <nav class="footer__nav">
@@ -724,7 +724,7 @@
         </div>
         <div class="footer__copyright">
           <small>&copy; Copyright0000　kitamurakensetukogyo</small>
-        </div> -->
+        </div>
       </footer>
     </div>
 
