@@ -477,11 +477,6 @@ a:hover {
   text-orientation: upright;
   display: block;
 }
-@media (max-width: 767px) {
-  .about__text p span:not(:first-child) {
-    margin-right: 1rem;
-  }
-}
 
 .service {
   padding: 8rem 3rem;

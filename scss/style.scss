@@ -460,12 +460,6 @@ a {
       span {
         @include writing;
         display: block;
-
-        &:not(:first-child) {
-          @media (max-width: 767px) {
-            margin-right: 1rem;
-          }
-        }
       }
     }
   }
