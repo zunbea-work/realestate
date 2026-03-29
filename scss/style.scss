@@ -107,6 +107,15 @@ a {
     display: block;
   }
 }
+.mt-5 {
+  margin-top: 5rem;
+
+  &--sp-3 {
+    @media (max-width: 767px) {
+      margin-top: 3rem;
+    }
+  }
+}
 
 // Top戻り矢印
 #fas-area {
@@ -401,7 +410,7 @@ a {
   &__textarea {
     position: absolute;
     bottom: 50%;
-    left: 15rem;
+    left: clamp(3rem, calc(30px + 120 * ((100vw - 768px) / 315)), 15rem);
     transform: translateY(50%);
     width: 50rem;
     height: 28rem;
@@ -435,22 +444,24 @@ a {
   }
 
   &__text {
-    @include writing;
 
     p {
+      display: flex;
+      flex-direction: row-reverse;
+      column-gap: calc(30 / 1080 * 100vw);
       line-height: calc(18 / 18);
       letter-spacing: (27.5rem / 11 - 1.8rem);
 
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, sm);
         letter-spacing: (22rem / 11 - 1.6rem);
+        column-gap: 1rem;
       }
       span {
+        @include writing;
         display: block;
 
         &:not(:first-child) {
-          margin-right: 3rem;
-
           @media (max-width: 767px) {
             margin-right: 1rem;
           }
@@ -787,7 +798,7 @@ a {
 
     &-link a {
       text-align: right;
-      padding: 2.3rem 3.1rem 1.1rem;
+      padding: 2.3rem 3.5rem 1.1rem;
       color: $main-color;
       font-size: map.get($font-sizes, md);
       line-height: calc(20 / 20);
@@ -840,6 +851,10 @@ a {
 
   &__contents {
     margin-top: 6.8rem;
+
+    @media (max-width:767px) {
+      margin-top: 3.8rem;
+    }
   }
 
   &__image {
@@ -914,8 +929,13 @@ a {
         display: flex;
         column-gap: 0.5rem;
 
-          span {
+        span {
           display: block;
+        }
+
+        .phone {
+          position: relative;
+          top: 0.3rem;
         }
       }
 
@@ -998,22 +1018,44 @@ a {
     }
 
     &-gender {
-      margin-top: 5rem;
+      display: flex;
+
+      @media (max-width: 767px) {
+        column-gap: 5rem;
+      }
+
+      dt {
+        @media (max-width: 767px) {
+          width: 4rem;
+        }
+      }
 
       dd {
+        display: flex;
+        column-gap: 7.4rem;
+
+        @media (max-width: 767px) {
+          column-gap: 3.9rem;
+        }
+
         label {
-          margin-right: 7.4rem;
+          display: flex;
+          align-items: center;
+          column-gap: 1.9rem;
+
+          @media (max-width: 767px) {
+            column-gap: 1rem;
+          }
         }
 
         input[type="radio"] {
-          margin-right: 1.9rem;
           appearance: none;
           width: 2rem;
           height: 2rem;
           background-color: $white;
           border-radius: 50%;
           position: relative;
-          cursor: pointer;;
+          cursor: pointer;
 
           &:checked::after {
             content: "";
@@ -1021,7 +1063,6 @@ a {
             height: 0.6rem;
             background-color: $black;
             border-radius: 50%;
-
             position: absolute;
             top: 50%;
             left: 50%;
@@ -1031,14 +1072,9 @@ a {
       }
     }
 
-    &-email {
-      margin-top: 5rem;
-    }
-
     &-inquiry {
       position: relative;
-      margin-top: 5rem;
-      
+
       .form__item-inquiry {
         padding: 1.3rem 0 1.2rem 2rem;
         line-height: calc(25 / 18);
@@ -1071,9 +1107,6 @@ a {
       }
     }
 
-    &-message {
-      margin-top: 5rem;
-    }
     &-textarea {
       background-color: $white;
       margin-top: 1rem;
@@ -1081,13 +1114,21 @@ a {
       height: 20rem;
       padding: 1.3rem 2rem;
       display: block;
+
+      @media (max-width: 767px) {
+        margin-top: 0;
+      }
     }
 
     &-question {
-      margin-top: 5rem;
       .form-label {
         font-size: map.get($font-sizes, md);
         line-height: calc(33 / 20);
+        display: block;
+
+        @media (max-width: 767px) {
+          line-height: calc(27 / 20);
+        }
       }
 
       dd {
@@ -1098,7 +1139,8 @@ a {
 
         @media (max-width: 767px) {
           grid-template-columns: repeat(2, 1fr);
-          row-gap: 1rem;
+          row-gap: 0.5rem;
+          margin-top: 0rem;
         }
 
         label {
@@ -1108,6 +1150,12 @@ a {
           cursor: pointer;
           position: relative;
           line-height: calc(25 / 18);
+
+          @media (max-width: 767px) {
+            font-size: map.get($font-sizes, sm);
+            line-height: calc(25 / 16);
+            column-gap: 1rem;
+          }
 
           input {
             all: revert;
@@ -1143,11 +1191,10 @@ a {
     }
 
     &-conditions {
-      margin-top: 5rem;
-
       .form-label {
         font-size: map.get($font-sizes, md);
         line-height: calc(33 / 20);
+        display: block;
       }
 
       .conditions {
@@ -1160,6 +1207,7 @@ a {
         padding: 4rem 6rem 4rem 4rem;
 
         @media (max-width: 767px) {
+          margin-top: 0;
           height: 32.3rem;
           padding: 3rem 5rem 3rem 3rem;
         }
@@ -1190,20 +1238,25 @@ a {
 
     &__button {
       text-align: center;
-      margin-top: 7.8rem;
+      margin-top: 8rem;
 
       @media (max-width: 767px) {
         margin-top: 5rem;
       }
     }
     &__submit {
-      padding: 0.8rem 6rem;
+      padding-block: 0.7rem 0.8rem;
+      width: 30rem;
       background-color: $main-color;
       color: $white;
       font-size: map.get($font-sizes, md);
       line-height: calc(33 / 20);
       border: solid 0.1rem $main-color;
       transition: all 0.4s;
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
 
       &:hover {
         background-color: $white;
@@ -1219,6 +1272,10 @@ a {
     padding: 8rem 3rem;
     text-align: center;
 
+    @media (max-width: 767px) {
+      padding: 5rem 3rem;
+    }
+
     h3 {
       font-size: map.get($font-sizes, md);
       line-height: calc(33 / 20);
@@ -1226,18 +1283,32 @@ a {
 
     .under-line {
       border-bottom: 0.1rem solid $black;
-      width: 72.2rem;
+      max-width: 72.2rem;
       margin: 2.8rem auto 0;
+
+      @media (max-width: 767px) {
+        margin-top: 1.9rem;
+      }
     }
   }
 
   &__nav {
     margin-top: 2.8rem;
 
+    @media (max-width: 767px) {
+      margin-top: 2rem;
+    }
+
     &--list {
       display: flex;
       justify-content: center;
       column-gap: 5rem;
+
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+        column-gap: 3rem;
+        row-gap: 0.5rem;
+      }
     }
     &--link {
       font-size: map.get($font-sizes, no);
@@ -1247,6 +1318,10 @@ a {
 
   &__sns {
     margin-top: 2.6rem;
+
+    @media (max-width: 767px) {
+      margin-top: 2.8rem;
+    }
 
     &--list {
       display: flex;
@@ -1263,6 +1338,12 @@ a {
     padding-block: 3rem 2.9rem;
     font-size: map.get($font-sizes, md);
     line-height: calc(33 / 20);
+    display: block;
+
+    @media (max-width: 767px) {
+      padding-block: 2.1rem;
+      line-height: calc(25 / 20);
+    }
   }
 }
 
