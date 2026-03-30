@@ -174,10 +174,9 @@ a {
       transform-origin: top;
       border-radius: 0.5rem;
     }
-
-    &:hover {
-      cursor: pointer;
-    }
+  }
+  &:hover {
+    cursor: pointer;
   }
 }
 
@@ -197,6 +196,7 @@ a {
   }
 
   .inner {
+    max-width: 108rem;
     height: 8rem;
     display: flex;
     justify-content: space-between;
@@ -214,6 +214,7 @@ a {
 
   @media (max-width: 830px) {
     font-size: map.get($font-sizes, no);
+    line-height: calc(20 / 18);
   }
 
   @media (max-width: 767px) {
@@ -317,6 +318,7 @@ a {
 
     @media (max-width: 830px) {
       font-size: map.get($font-sizes, sm);
+      line-height: calc(18 / 16);
     }
 
     @media (max-width: 767px) {
@@ -438,6 +440,7 @@ a {
 
     @media (max-width: 767px) {
       font-size: map.get($font-sizes, lg);
+      line-height: calc(30 / 25);
       margin-left: 0;
       letter-spacing: (24rem / 8 - 2.5rem);
     }
@@ -474,10 +477,12 @@ a {
   }
 
   &__image {
+    max-width: 60rem;
     width: calc(600 / 1080 * 100vw);
     height: 100%;
 
     @media (max-width: 767px) {
+      max-width: none;
       width: 100%;
     }
 
@@ -493,11 +498,13 @@ a {
   }
   &__textarea {
     background-color: $main-color;
+    max-width: 50rem;
     width: calc(500 / 1080 * 100vw);
     margin-top: -19.9rem;
     color: $white;
 
     @media (max-width: 767px) {
+      max-width: none;
       width: 100%;
       margin-top: 0.6rem;
     }
@@ -616,11 +623,19 @@ a {
 
   &__list {
     display: flex;
-    column-gap: calc(40 / 1080 * 100vw);
+    column-gap: calc(40 / 880 * 100%);
 
     @media (max-width: 767px) {
       flex-direction: column;
       row-gap: 2.2rem;
+    }
+
+    .modal-open {
+      transition: opacity 0.4s;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -853,6 +868,7 @@ a {
 
   &__image {
     &-iframe {
+      max-width: 60rem;
       width: calc(600 / 1080 * 100vw);
       height: 40rem;
 
@@ -936,6 +952,11 @@ a {
       .number {
         font-size: map.get($font-sizes, lg);
         line-height: calc(25 / 25);
+
+        @media (min-width: 768px) {
+          pointer-events: none;
+          cursor: default;
+        }
       }
     }
 
