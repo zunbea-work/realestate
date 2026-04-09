@@ -1,19 +1,33 @@
 // ハンバーガー
-$("#js-hamburger").click(function () {
-  $(".hamburger").toggleClass("is-active");
-  $(".header-menu").toggleClass("is-open");
-  $("#js-overlay").toggleClass("is-open");
+$(function () {
+  $('.hamburger').on('click', function() {
+    $(this).toggleClass('active');
+    $('.header__nav').toggleClass('active');
+  })
+
+  $('.header__nav ul li a').click(function() {
+    $('.hamburger').removeClass('active');
+    $('.header__nav').removeClass('active');
+  })
 });
-$("#js-overlay").click(function () {
-  $(".hamburger").removeClass("is-active");
-  $(".header-menu").removeClass("is-open");
-  $("#js-overlay").removeClass("is-open");
-});
+
+$(function () {
+  $(window).scroll(function() {
+    const aboutPos = $('.about').offset().top;
+    const scrollTop = $(this).scrollTop();
+
+    if(scrollTop > aboutPos) {
+      $('.header').addClass('change');
+    } else {
+      $('.header').removeClass('change');
+    }
+  })
+})
 
 // モーダル
 let scrollY;
 
-$(function(){
+$(function (){
   $(".modal-open").on("click", function(e) {
     e.preventDefault();
 
@@ -77,3 +91,7 @@ goTop.click(function () {
   }, 500);
   return false;
 });
+
+$(function () {
+  AOS.init();
+})

@@ -17,8 +17,8 @@ header.style.transition = 'background-color 0.4s';
 
 window.addEventListener('scroll', () => {
 	if (window.scrollY > 0) {
-		header.style.backgroundColor = 'rgba(77, 150, 0, 1)';
-		header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+		// header.style.backgroundColor = 'rgba(77, 150, 0, 1)';
+		// header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
 	} else {
 		header.style.backgroundColor = 'transparent';
 		header.style.boxShadow = 'none';
