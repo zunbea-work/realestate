@@ -6,6 +6,7 @@ html {
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
   word-break: break-all;
   font-size: 10px;
 }
@@ -167,7 +168,7 @@ a:hover {
 
 .header {
   width: 100%;
-  height: 8.7rem;
+  height: 8rem;
   padding-inline: 7.4074074074vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -176,6 +177,9 @@ a:hover {
   top: 0;
   left: 0;
   z-index: 9999;
+}
+.header.change {
+  background-color: #4D9600;
 }
 @media (max-width: 767px) {
   .header {
@@ -209,6 +213,7 @@ a:hover {
 @media (max-width: 767px) {
   .header__logo a {
     font-size: 1.6rem;
+    line-height: 2.0625;
   }
 }
 @media (max-width: 767px) {
@@ -219,8 +224,6 @@ a:hover {
     right: -120%;
     background: #4D9600;
     z-index: 500;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
   }
 }
 .header__nav--list {
@@ -240,7 +243,7 @@ a:hover {
   }
 }
 .header__nav--item a {
-  height: 8.7rem;
+  height: 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,6 +258,7 @@ a:hover {
 @media (max-width: 1000px) {
   .header__nav--item a {
     font-size: 1.6666666667vw;
+    line-height: 1.8333333333;
   }
 }
 @media (max-width: 767px) {
@@ -262,7 +266,8 @@ a:hover {
     width: 100%;
     height: 5.8rem;
     padding-left: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    line-height: 1.8333333333;
   }
 }
 @media (min-width: 768px) {
@@ -288,6 +293,7 @@ a:hover {
   .header__nav--item a:hover {
     background: #000;
     color: #FFF;
+    opacity: 1;
   }
 }
 .header__nav--item a:hover::before {
@@ -296,17 +302,6 @@ a:hover {
 }
 .header__nav.active {
   right: 0;
-}
-.header.change .header__logo a {
-  color: #000;
-}
-@media (min-width: 768px) {
-  .header.change .header__nav--item a {
-    color: #000;
-  }
-}
-.header.change .header__nav--item a::before {
-  background-color: #000;
 }
 
 .hamburger-inner {
@@ -361,6 +356,7 @@ a:hover {
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.15);
+  z-index: 99;
 }
 .fv__contents {
   text-align: center;
@@ -380,6 +376,7 @@ a:hover {
   letter-spacing: 0.3em;
   color: #FFF;
   text-shadow: 0.5rem 0.5rem 0.5rem rgb(0, 0, 0);
+  z-index: 100;
 }
 @media (max-width: 767px) {
   .fv__contents--text {
@@ -457,6 +454,7 @@ a:hover {
 @media (max-width: 767px) {
   .about__title {
     font-size: 2.5rem;
+    line-height: 1;
     line-height: 1;
     margin-left: 0;
     letter-spacing: 0.19em;
@@ -717,7 +715,7 @@ a:hover {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
-  z-index: 999;
+  z-index: 9999;
 }
 .modal-container::before {
   content: "";
@@ -928,6 +926,7 @@ a:hover {
 }
 @media (max-width: 767px) {
   .company__image-iframe {
+    max-width: none;
     width: 100%;
     height: 30rem;
   }
@@ -962,6 +961,9 @@ a:hover {
 @media (max-width: 767px) {
   .company-textarea--wrapper {
     padding: 1.9rem 2rem 1.2rem;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
   }
 }
 .company-textarea--inner {
@@ -1139,6 +1141,7 @@ a:hover {
   -webkit-column-gap: 1.9rem;
      -moz-column-gap: 1.9rem;
           column-gap: 1.9rem;
+  cursor: pointer;
 }
 @media (max-width: 767px) {
   .contact .form-gender dd label {
@@ -1210,6 +1213,8 @@ a:hover {
 }
 .contact .form-textarea {
   background-color: #FFF;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
   margin-top: 1rem;
   width: 100%;
   height: 20rem;
@@ -1244,7 +1249,7 @@ a:hover {
     margin-top: 0rem;
   }
 }
-.contact .form-question dd label {
+.contact .form-question dd p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1259,7 +1264,7 @@ a:hover {
   line-height: 1.3888888889;
 }
 @media (max-width: 767px) {
-  .contact .form-question dd label {
+  .contact .form-question dd p {
     font-size: 1.6rem;
     line-height: 1.5625;
     -webkit-column-gap: 1rem;
@@ -1267,17 +1272,17 @@ a:hover {
             column-gap: 1rem;
   }
 }
-.contact .form-question dd label input {
+.contact .form-question dd p input {
   all: revert;
   position: absolute;
   inset: 0;
   opacity: 0;
   margin: 0;
 }
-.contact .form-question dd label input:hover {
+.contact .form-question dd p input:hover {
   cursor: pointer;
 }
-.contact .form-question dd label input:checked + .checkbox-ui::after {
+.contact .form-question dd p input:checked + .checkbox-ui::after {
   content: "";
   position: absolute;
   width: 1rem;
@@ -1289,7 +1294,7 @@ a:hover {
   top: 0.6rem;
   left: 0.5rem;
 }
-.contact .form-question dd label .checkbox-ui {
+.contact .form-question dd p .checkbox-ui {
   width: 2rem;
   height: 2rem;
   background-color: #FFF;
