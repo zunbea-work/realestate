@@ -16,18 +16,18 @@ $(function () {
     const aboutPos = $('.about').offset().top;
     const scrollTop = $(this).scrollTop();
 
-    if(scrollTop > aboutPos) {
+    if(scrollTop > aboutPos - 100) {
       $('.header').addClass('change');
     } else {
       $('.header').removeClass('change');
     }
   })
-})
+});
 
 // モーダル
 let scrollY;
 
-$(function (){
+$(function () {
   $(".modal-open").on("click", function(e) {
     e.preventDefault();
 
@@ -52,7 +52,9 @@ $(function (){
       width: ""
     });
 
+    $("html").css("scroll-behavior", "auto");
     $(window).scrollTop(scrollY);
+    $("html").css("scroll-behavior", "");
   });
 
   $(".modal-close").on("click", function() {
@@ -64,7 +66,9 @@ $(function (){
       width: ""
     });
 
+    $("html").css("scroll-behavior", "auto");
     $(window).scrollTop(scrollY);
+    $("html").css("scroll-behavior", "");
   });
 
   $(".modal-body").on("click", function(e) {

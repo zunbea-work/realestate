@@ -38,6 +38,7 @@ html {
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
   word-break: break-all;
   font-size: 10px;
 }
@@ -187,13 +188,16 @@ a {
 // header
 .header {
   width: 100%;
-  height: 8.7rem;
+  height: 8rem;
   padding-inline: calc(80 / 1080 * 100vw);
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  &.change {
+    background-color: #4D9600;
+  }
   @media (max-width: 767px) {
     height: 5rem;
     padding: 0 0 0 2rem;
@@ -215,6 +219,7 @@ a {
       }
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, sm);
+        line-height: calc(33 / 16);
       }
     }
   }
@@ -226,7 +231,6 @@ a {
       right: -120%;
       background: $main-color;
       z-index: 500;
-      transition: all 0.4s;
     }
     &--list {
       display: flex;
@@ -237,7 +241,7 @@ a {
     }
     &--item {
       a {
-        height: 8.7rem;
+        height: 8rem;
         display: flex;
         align-items: center;
         font-weight: 500;
@@ -246,12 +250,14 @@ a {
         position: relative;
         @media (max-width: 1000px) {
           font-size: calc(18 / 1080 * 100vw);
+          line-height: calc(33 / 18);
         }
         @media (max-width: 767px) {
           width: 100%;
           height: 5.8rem;
           padding-left: 2rem;
-          font-size: map.get($font-sizes, sm);
+          font-size: map.get($font-sizes, no);
+          line-height: calc(33 / 18);
         }
         &::before {
           @media (min-width: 768px) {
@@ -271,6 +277,7 @@ a {
           @media (max-width: 768px) {
             background: $black;
             color: $white;
+            opacity: 1;
           }
           &::before {
             transform: scaleX(1);
@@ -280,25 +287,6 @@ a {
     }
     &.active {
       right: 0;
-    }
-  }
-  &.change {
-    .header__logo {
-      a {
-        color: $black;
-      }
-    }
-    .header__nav {
-      &--item {
-        a {
-          @media (min-width: 768px) {
-            color: $black;
-          }
-          &::before {
-            background-color: $black;
-          }
-        }
-      }
     }
   }
 }
@@ -363,6 +351,7 @@ a {
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.15);
+    z-index: 99;
   }
 
 
@@ -383,6 +372,7 @@ a {
       letter-spacing: 0.3em;
       color: $white;
       text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 1);
+      z-index: 100;
 
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, xl);
@@ -447,6 +437,7 @@ a {
 
     @media (max-width: 767px) {
       font-size: map.get($font-sizes, lg);
+      line-height: calc(2.5 / 2.5);
       line-height: 1;
       margin-left: 0;
       letter-spacing: 0.19em;
@@ -687,7 +678,7 @@ a {
     transition: 0.4s;
     box-sizing: border-box;
     text-align: center;
-    z-index: 999;
+    z-index: 9999;
 
     &::before {
       content: "";
@@ -786,7 +777,7 @@ a {
     }
 
     &-item {
-      
+
       border-bottom: 1px solid $main-color;
 
       @media (max-width: 767px) {
@@ -897,6 +888,7 @@ a {
       height: 40rem;
 
       @media (max-width:767px) {
+        max-width: none;
         width: 100%;
         height: 30rem;
       }
@@ -928,6 +920,7 @@ a {
 
       @media (max-width: 767px) {
         padding: 1.9rem 2rem 1.2rem;
+        justify-content: left;
       }
     }
 
@@ -1081,6 +1074,7 @@ a {
           display: flex;
           align-items: center;
           column-gap: 1.9rem;
+          cursor: pointer;
 
           @media (max-width: 767px) {
             column-gap: 1rem;
@@ -1152,6 +1146,8 @@ a {
 
     &-textarea {
       background-color: $white;
+      font-size: map.get($font-sizes, no);
+      line-height: calc(25 / 18);
       margin-top: 1rem;
       width: 100%;
       height: 20rem;
@@ -1186,7 +1182,7 @@ a {
           margin-top: 0rem;
         }
 
-        label {
+        p {
           display: flex;
           align-items: center;
           column-gap: calc(20 / 1080 * 100vw);
