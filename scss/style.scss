@@ -188,7 +188,7 @@ a {
 // header
 .header {
   width: 100%;
-  height: 8rem;
+  height: calc(80 / 1080 * 100vw);
   padding-inline: calc(80 / 1080 * 100vw);
   display: flex;
   position: fixed;
@@ -209,17 +209,17 @@ a {
   }
   &__logo {
     a {
-      font-size: map.get($font-sizes, md);
+      font-size: calc(20 / 1080 * 100vw);
       line-height: calc(33 / 20);
       font-weight: 500;
       display: block;
       color: $white;
-      @media (max-width: 1000px) {
-        font-size: calc(20 / 1080 * 100vw);
+      @media (min-width: 1080px) {
+        font-size: map.get($font-sizes, md);
       }
       @media (max-width: 767px) {
-        font-size: map.get($font-sizes, sm);
-        line-height: calc(33 / 16);
+        font-size: calc(20 / 375 * 100vw);
+        line-height: calc(33 / 20);
       }
     }
   }
@@ -234,7 +234,10 @@ a {
     }
     &--list {
       display: flex;
-      column-gap: 3rem;
+      column-gap: calc(30 / 1080 * 100vw);
+      @media (min-width: 1080px) {
+        column-gap: 3rem;
+      }
       @media (max-width: 767px) {
         flex-direction: column;
       }
@@ -245,11 +248,11 @@ a {
         display: flex;
         align-items: center;
         font-weight: 500;
-        font-size: map.get($font-sizes, no);
+        font-size: calc(18 / 1080 * 100vw);
         color: $white;
         position: relative;
-        @media (max-width: 1000px) {
-          font-size: calc(18 / 1080 * 100vw);
+        @media (min-width: 1080px) {
+          font-size: map.get($font-sizes, no);
           line-height: calc(33 / 18);
         }
         @media (max-width: 767px) {
@@ -361,12 +364,12 @@ a {
     height: 100%;
 
     &--text {
-      width: 56.7rem;
+      width: calc(567 / 1080 * 100vw);
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-49%, -43%);
-      font-size: map.get($font-sizes, xxl);
+      font-size: calc(40 / 1080 * 100vw);
       line-height: calc(70 / 40);
       font-weight: 600;
       letter-spacing: 0.3em;
@@ -375,7 +378,8 @@ a {
       z-index: 100;
 
       @media (max-width: 767px) {
-        font-size: map.get($font-sizes, xl);
+        width: calc(375 / 375 * 100vw);
+        font-size: calc(30 / 375 * 100vw);
         line-height: calc(60 / 30);
         transform: translate(-49%, -45%);
       }
@@ -422,7 +426,7 @@ a {
       flex-direction: column;
       align-items: center;
       padding-top: 5rem;
-      row-gap: 2.6rem;
+      row-gap: calc(26 / 375 * 100vw);
       width: 100%;
       height: 100%;
     }
@@ -436,7 +440,7 @@ a {
     margin-left: 6rem;
 
     @media (max-width: 767px) {
-      font-size: map.get($font-sizes, lg);
+      font-size: calc(25 / 375 * 100vw);
       line-height: calc(2.5 / 2.5);
       line-height: 1;
       margin-left: 0;
@@ -455,7 +459,7 @@ a {
       letter-spacing: 0.37em;
 
       @media (max-width: 767px) {
-        font-size: map.get($font-sizes, sm);
+        font-size: calc(16 / 375 * 100vw);
         line-height: calc(16 / 16);
         letter-spacing: 0.25em;
         column-gap: 1rem;
@@ -772,7 +776,7 @@ a {
     }
 
     &-list {
-      padding: 0 2rem 2rem ;
+      padding: 0 2rem 2.4rem ;
       background-color: $white;
     }
 
@@ -903,7 +907,7 @@ a {
   &-textarea {
     width: 50rem;
     margin-left: auto;
-    margin-top: -20rem;
+    margin-top: -19.5rem;
     background-color: $main-color;
     color: $white;
     font-weight: 600;
@@ -1169,7 +1173,6 @@ a {
           line-height: calc(27 / 20);
         }
       }
-
       dd {
         margin-top: 1rem;
         display: grid;
@@ -1233,39 +1236,59 @@ a {
       }
     }
 
-    .conditions {
-      padding: 1rem;
-      background: $white;
-      &__inner {
-        width: 100%;
-        height: 28rem;
-        overflow-y: scroll;
+    &-conditions {
+      .form-label {
+        font-size: map.get($font-sizes, md);
+        line-height: calc(33 / 20);
+        display: block;
+
         @media (max-width: 767px) {
-          height: 30.3rem;
-        }
-        // スクロールバーの指定
-        &::-webkit-scrollbar {
-          width: 1rem;
-          background: #E3E3E3;
-        }
-        // スクロールバーのつまみ部分
-        &::-webkit-scrollbar-thumb {
-          background: #9B9B9B;
-          height: 3rem;
+          line-height: calc(33 / 20);
         }
       }
-      &__contents {
-        padding: 3rem;
-        font-size: map.get($font-sizes, sm);
-        line-height: calc(31 / 16);
+      .conditions {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: $white;
         @media (max-width: 767px) {
-          padding: 2rem;
+          margin-top: 0;
         }
-        h3 {
-          font-size: map.get($font-sizes, no);
-          line-height: calc(31 / 18);
-          &:not(:first-of-type) {
-            margin-top: 3.1rem;
+        &__inner {
+          width: 100%;
+          height: 28rem;
+          overflow-y: scroll;
+          @media (max-width: 767px) {
+            height: 30.3rem;
+          }
+          // スクロールバーの指定
+          &::-webkit-scrollbar {
+            width: 1rem;
+            background: #E3E3E3;
+          }
+          // スクロールバーのつまみ部分
+          &::-webkit-scrollbar-thumb {
+            background: #9B9B9B;
+            height: 3rem;
+          }
+        }
+        &__contents {
+          padding: 3rem;
+          font-size: map.get($font-sizes, sm);
+          line-height: calc(31 / 16);
+          @media (max-width: 767px) {
+            padding: 2rem 3rem 2rem 2rem;
+            line-height: calc(33 / 16);
+          }
+          h3 {
+            font-size: map.get($font-sizes, no);
+            line-height: calc(31 / 18);
+            @media (max-width: 767px) {
+              font-size: map.get($font-sizes, sm);
+              line-height: calc(33 / 16);
+            }
+            &:not(:first-of-type) {
+              margin-top: 3.1rem;
+            }
           }
         }
       }
