@@ -821,8 +821,14 @@ a:hover {
   padding: 0 2rem 2.4rem;
   background-color: #FFF;
 }
-.news__contents-item {
+.news__contents-line {
   border-bottom: 1px solid #4D9600;
+}
+.news__contents-line + .news__contents-line dt {
+  padding-top: 1.3rem;
+}
+.news__contents-line + .news__contents-line dd {
+  padding-top: 2rem;
 }
 @media (max-width: 767px) {
   .news__contents-item {
@@ -830,12 +836,6 @@ a:hover {
        -moz-column-gap: 1.9rem;
             column-gap: 1.9rem;
   }
-}
-.news__contents-item + .news__contents-item dt {
-  padding-top: 1.3rem;
-}
-.news__contents-item + .news__contents-item dd {
-  padding-top: 2rem;
 }
 .news__contents-item dt {
   font-size: 1.6rem;

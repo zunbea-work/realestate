@@ -779,13 +779,8 @@ a {
       background-color: $white;
     }
 
-    &-item {
-
+    &-line {
       border-bottom: 1px solid $main-color;
-
-      @media (max-width: 767px) {
-        column-gap: 1.9rem;
-      }
 
       & + & {
         dt {
@@ -795,6 +790,11 @@ a {
         dd {
           padding-top: 2rem;
         }
+      }
+    }
+    &-item {
+      @media (max-width: 767px) {
+        column-gap: 1.9rem;
       }
 
       dt {
