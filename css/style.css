@@ -11,6 +11,11 @@ html {
   font-size: 10px;
 }
 
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
 body {
   font-family: "YuMincho", "Hiragino Mincho ProN", sans-serif;
   font-weight: 500;
@@ -167,9 +172,10 @@ a:hover {
 }
 
 .header {
+  max-width: 110rem;
   width: 100%;
-  height: 7.4074074074vw;
-  padding-inline: 7.4074074074vw;
+  height: clamp(8rem, 7.4074074074vw, 8rem);
+  padding-inline: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,21 +205,15 @@ a:hover {
           align-items: center;
 }
 .header__logo a {
-  font-size: 1.8518518519vw;
+  font-size: clamp(1.7rem, 1.8518518519vw, 2rem);
   line-height: 1.65;
   font-weight: 500;
   display: block;
   color: #FFF;
 }
-@media (min-width: 1080px) {
-  .header__logo a {
-    font-size: 2rem;
-  }
-}
 @media (max-width: 767px) {
   .header__logo a {
     font-size: 2rem;
-    line-height: 1.65;
   }
 }
 @media (max-width: 767px) {
@@ -232,16 +232,9 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 2.7777777778vw;
-     -moz-column-gap: 2.7777777778vw;
-          column-gap: 2.7777777778vw;
-}
-@media (min-width: 1080px) {
-  .header__nav--list {
-    -webkit-column-gap: 3rem;
-       -moz-column-gap: 3rem;
-            column-gap: 3rem;
-  }
+  -webkit-column-gap: clamp(3rem, 2.7777777778vw, 3rem);
+     -moz-column-gap: clamp(3rem, 2.7777777778vw, 3rem);
+          column-gap: clamp(3rem, 2.7777777778vw, 3rem);
 }
 @media (max-width: 767px) {
   .header__nav--list {
@@ -260,15 +253,9 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 500;
-  font-size: 1.6666666667vw;
+  font-size: clamp(1.5rem, 1.6666666667vw, 1.8rem);
   color: #FFF;
   position: relative;
-}
-@media (min-width: 1080px) {
-  .header__nav--item a {
-    font-size: 1.8rem;
-    line-height: 1.8333333333;
-  }
 }
 @media (max-width: 767px) {
   .header__nav--item a {
@@ -315,7 +302,15 @@ a:hover {
 
 .hamburger {
   position: relative;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 7.2rem;
   height: 5rem;
   background-color: #FFF;
@@ -323,7 +318,7 @@ a:hover {
 .hamburger span {
   position: absolute;
   display: block;
-  top: 47%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -335,10 +330,10 @@ a:hover {
   border-radius: 0.5rem;
 }
 .hamburger span:nth-of-type(1) {
-  top: 23%;
+  top: 25%;
 }
 .hamburger span:nth-of-type(3) {
-  top: 70%;
+  top: 75%;
 }
 .hamburger.active span:nth-of-type(1) {
   top: 50%;
@@ -409,35 +404,25 @@ a:hover {
 .about {
   position: relative;
 }
-.about__contents {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: clamp(3rem, 30px + 120 * (100vw - 768px) / 315, 15rem);
-}
-@media (max-width: 767px) {
-  .about__contents {
-    left: 0;
-  }
-}
 .about__textarea {
-  padding-top: 10.1851851852vw;
-  width: 50rem;
-  height: 100%;
+  position: absolute;
+  top: clamp(8rem, 10.1851851852vw, 11rem);
+  left: clamp(10rem, 12.5vw, 13.5rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  -webkit-column-gap: clamp(3rem, 4.1666666667vw, 4.5rem);
+     -moz-column-gap: clamp(3rem, 4.1666666667vw, 4.5rem);
+          column-gap: clamp(3rem, 4.1666666667vw, 4.5rem);
 }
 @media (max-width: 767px) {
   .about__textarea {
+    top: 0;
+    left: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -445,10 +430,10 @@ a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 5rem;
-    row-gap: 6.9333333333vw;
-    width: 100%;
-    height: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    row-gap: 6.4vw;
   }
 }
 .about__title {
@@ -459,48 +444,30 @@ a:hover {
   font-size: 2.7777777778vw;
   line-height: 1;
   letter-spacing: 0.18em;
-  margin-left: 6rem;
 }
 @media (max-width: 767px) {
   .about__title {
     font-size: 6.6666666667vw;
-    line-height: 1;
     line-height: 1;
     margin-left: 0;
     letter-spacing: 0.19em;
   }
 }
 .about__text p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-column-gap: 2.7777777778vw;
-     -moz-column-gap: 2.7777777778vw;
-          column-gap: 2.7777777778vw;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
   font-size: 1.6666666667vw;
-  line-height: 1;
+  line-height: 2.6666666667;
   letter-spacing: 0.37em;
 }
 @media (max-width: 767px) {
   .about__text p {
     font-size: 4.2666666667vw;
-    line-height: 1;
+    line-height: 1.625;
     letter-spacing: 0.25em;
-    -webkit-column-gap: 1rem;
-       -moz-column-gap: 1rem;
-            column-gap: 1rem;
   }
-}
-.about__text p span {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: upright;
-  display: block;
 }
 
 .service {
@@ -696,7 +663,7 @@ a:hover {
   }
 }
 .works__text {
-  font-size: 1.4814814815vw;
+  font-size: clamp(1.2rem, 1.4814814815vw, 1.6rem);
   line-height: 1.5625;
   padding-top: 1.9rem;
 }
@@ -798,9 +765,9 @@ a:hover {
 .news__contents {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 5.5555555556vw;
-     -moz-column-gap: 5.5555555556vw;
-          column-gap: 5.5555555556vw;
+  -webkit-column-gap: clamp(6rem, 5.5555555556vw, 6rem);
+     -moz-column-gap: clamp(6rem, 5.5555555556vw, 6rem);
+          column-gap: clamp(6rem, 5.5555555556vw, 6rem);
   margin-top: 6.8rem;
 }
 @media (max-width: 767px) {
@@ -818,17 +785,11 @@ a:hover {
   padding: 0.9rem 2rem 0.8rem;
 }
 .news__contents-list {
-  padding: 0 2rem 2.4rem;
+  padding: 1rem 2rem 2.4rem;
   background-color: #FFF;
 }
 .news__contents-line {
   border-bottom: 1px solid #4D9600;
-}
-.news__contents-line + .news__contents-line dt {
-  padding-top: 1.3rem;
-}
-.news__contents-line + .news__contents-line dd {
-  padding-top: 2rem;
 }
 @media (max-width: 767px) {
   .news__contents-item {
@@ -840,11 +801,11 @@ a:hover {
 .news__contents-item dt {
   font-size: 1.6rem;
   line-height: 2.0625;
-  padding-top: 2.3rem;
 }
 .news__contents-item dd {
+  font-size: clamp(1.8rem, 1.6666666667vw, 1.8rem);
   line-height: 1.3888888889;
-  padding-top: 3rem;
+  padding-top: 0.7rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -853,10 +814,17 @@ a:hover {
 .news__contents-grid {
   display: grid;
   grid-template-columns: auto 1fr;
-  -webkit-column-gap: 6.3888888889vw;
-     -moz-column-gap: 6.3888888889vw;
-          column-gap: 6.3888888889vw;
-  padding-block: 0 1.2rem;
+  -webkit-column-gap: clamp(6.9rem, 6.3888888889vw, 6.9rem);
+     -moz-column-gap: clamp(6.9rem, 6.3888888889vw, 6.9rem);
+          column-gap: clamp(6.9rem, 6.3888888889vw, 6.9rem);
+  padding-block: 1.3rem 1.2rem;
+}
+@media (max-width: 767px) {
+  .news__contents-grid {
+    -webkit-column-gap: 5.0666666667vw;
+       -moz-column-gap: 5.0666666667vw;
+            column-gap: 5.0666666667vw;
+  }
 }
 .news__contents-link {
   margin-top: 1.7rem;
@@ -948,7 +916,7 @@ a:hover {
 .company-textarea {
   width: 50rem;
   margin-left: auto;
-  margin-top: -19.5rem;
+  margin-top: -20rem;
   background-color: #4D9600;
   color: #FFF;
   font-weight: 600;
@@ -966,7 +934,7 @@ a:hover {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
-  padding: 4.9rem 0.5rem 4.2rem 0;
+  padding-block: 4.9rem 4.2rem;
 }
 @media (max-width: 767px) {
   .company-textarea--wrapper {
@@ -977,7 +945,7 @@ a:hover {
   }
 }
 .company-textarea--inner {
-  width: 27.5rem;
+  width: clamp(26rem, 25.462962963vw, 27.5rem);
 }
 .company-textarea__address, .company-textarea__tel .phone, .company-textarea__mail {
   font-size: 1.6rem;
@@ -1192,14 +1160,11 @@ a:hover {
   background-color: #FFF;
   width: 100%;
 }
-.contact .form-inquiry:hover {
+.contact .form-inquiry .form__item-inquiry:hover {
   cursor: pointer;
 }
-.contact .form-inquiry:hover::after {
-  width: 2rem;
-  height: 1.6rem;
-}
-.contact .form-inquiry::after {
+.contact .form-inquiry .form__item-arrow {
+  position: absolute;
   content: "";
   width: 1.6rem;
   height: 1.2rem;
@@ -1212,10 +1177,14 @@ a:hover {
           transform: translateY(-50%);
   -webkit-transform-origin: center;
           transform-origin: center;
-  pointer-events: none;
+}
+.contact .form-inquiry .form__item-arrow:hover {
+  width: 2rem;
+  height: 1.6rem;
+  cursor: pointer;
 }
 @media (max-width: 767px) {
-  .contact .form-inquiry::after {
+  .contact .form-inquiry .form__item-arrow {
     top: 75%;
     -webkit-transform: translateY(-75%);
             transform: translateY(-75%);
@@ -1386,8 +1355,18 @@ a:hover {
   cursor: pointer;
 }
 .contact .form__submit {
-  padding-block: 0.7rem 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 30rem;
+  height: 5rem;
+  margin: 0 auto;
   background-color: #4D9600;
   color: #FFF;
   font-size: 2rem;
@@ -1418,6 +1397,15 @@ a:hover {
 .footer__inner h3 {
   font-size: 2rem;
   line-height: 1.65;
+  border-bottom: 0.1rem solid #000;
+  max-width: 72.2rem;
+  margin: 0 auto;
+  padding-bottom: 2.8rem;
+}
+@media (max-width: 767px) {
+  .footer__inner h3 {
+    padding-bottom: 1.9rem;
+  }
 }
 .footer__inner .under-line {
   border-bottom: 0.1rem solid #000;
