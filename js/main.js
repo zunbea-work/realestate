@@ -11,17 +11,22 @@ $(function () {
   })
 });
 
+// スクロールでヘッダー色変更
 $(function () {
-  $(window).scroll(function() {
-    const aboutPos = $('.about').offset().top;
-    const scrollTop = $(this).scrollTop();
 
-    if(scrollTop > aboutPos - 100) {
+  $(window).on("load scroll resize",function() {
+    const scrollTop = $(this).scrollTop();
+    const aboutPos = $('#about').offset().top;
+
+    const isPC = window.matchMedia("(min-width:768px)").matches;
+    const offset = isPC ? 81 : 51;
+
+    if(scrollTop > aboutPos - offset) {
       $('.header').addClass('change');
     } else {
       $('.header').removeClass('change');
     }
-  })
+  });
 });
 
 // モーダル
@@ -97,5 +102,19 @@ goTop.click(function () {
 });
 
 $(function () {
-  AOS.init();
-})
+  AOS.init({
+    once: true,
+  });
+});
+
+'use strict';
+
+// Splide
+new Splide( '.splide',{
+	autoplay: true,
+	interval: 3000,
+	speed: 2000,
+	type: "loop",
+	arrows: false,
+	pagination: false,
+} ).mount();
