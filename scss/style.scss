@@ -135,8 +135,16 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
+  transition: opacity 0.4s;
+  &:hover {
+    opacity: 0.7;
+  }
   @media (max-width: 767px) {
     right: 2rem;
+    bottom: 6rem;
+    // right: 0;
+    // bottom: 0;
     width: 5rem;
     height: 5rem;
   }
@@ -181,15 +189,16 @@ a {
 
 // header
 .header {
-  max-width: 110rem;
   width: 100%;
   height: clamp(8rem, calc(80 / 1080 * 100vw), 8rem);
   padding-inline: 3rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9990;
   &.change {
     background-color: #4D9600;
   }
@@ -237,7 +246,7 @@ a {
         display: flex;
         align-items: center;
         font-weight: 500;
-        font-size: clamp(1.5rem,calc(18 / 1080 * 100vw), 1.8rem);
+        font-size: clamp(1.4rem,calc(18 / 1080 * 100vw), 1.8rem);
         color: $white;
         position: relative;
         @media (max-width: 767px) {
@@ -288,6 +297,9 @@ a {
   width: 7.2rem;
   height: 5rem;
   background-color: $white;
+  &:hover {
+    cursor: pointer;
+  }
   // 3本線
   span {
     position: absolute;
@@ -378,32 +390,22 @@ a {
 // about
 .about {
   position: relative;
-  // &__contents {
-  //   width: 100%;
-  //   height: 100%;
-  //   position: relative;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  // }
   &__textarea {
     position: absolute;
-    // top: 0;
-    // left: 0;
-    top: clamp(8rem, calc(110 / 1080 * 100vw), 11rem);
-    left: clamp(10rem, calc(135 / 1080 * 100vw), 13.5rem);
+    top: clamp(8rem, calc(110 / 1080 * 100vw), 30rem);
+    left: clamp(10rem, calc(135 / 1080 * 100vw), 30rem);
     display: flex;
     flex-direction: row-reverse;
-    column-gap: clamp(3rem, calc(45 / 1080 * 100vw), 4.5rem);
+    column-gap: clamp(3rem, calc(45 / 1080 * 100vw), 9rem);
     @media (max-width: 767px) {
       top: 0;
       left: 0;
-      // transform: translate(-50%, -50%);
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // padding-top: 5rem;
-      // margin-inline: calc(75 / 375 * 100vw);
+      width: calc(375 / 375 * 100vw);
+      padding-top: calc(50 / 375 * 100vw);
+      margin: 0 auto;
       row-gap: calc(24 / 375 * 100vw);
     }
   }
@@ -473,12 +475,12 @@ a {
       line-height: calc(33 / 25);
       font-weight: 600;
       @media (max-width: 767px) {
-        font-size: map.get($font-sizes, md);
+        font-size: clamp(1.7rem, calc(20 / 375 * 100vw), 2rem);
         line-height: calc(25 / 20);
       }
     }
     p {
-      font-size: map.get($font-sizes, sm);
+      font-size: clamp(1.4rem, calc(16 / 375 * 100vw), 1.6rem);
       line-height: calc(25 / 16);
       font-weight: 600;
       margin-top: 1.7rem;
@@ -585,7 +587,7 @@ a {
     }
   }
   &__text {
-    font-size: clamp(1.2rem, calc(16 / 1080 * 100vw),1.6rem);
+    font-size: clamp(1.6rem, calc(16 / 1080 * 100vw),1.6rem);
     line-height: calc(25 / 16);
     padding-top: 1.9rem;
     @media (max-width: 767px) {
@@ -606,6 +608,9 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
     opacity: 0;
@@ -613,7 +618,7 @@ a {
     transition: 0.4s;
     box-sizing: border-box;
     text-align: center;
-    z-index: 9999;
+    z-index: 9980;
     &::before {
       content: "";
       display: inline-block;
@@ -631,11 +636,34 @@ a {
     vertical-align: middle;
     background-color: $white;
     align-items: center;
-    max-width: 45rem;
+    width: 45rem;
     padding: 1.5rem 1.5rem 0.6rem;
     text-align: left;
+    .modal-close {
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      top: -1.5rem;
+      right: -1.5rem;
+      cursor: pointer;
+      span {
+        position: absolute;
+        display: block;
+        top: 0.7rem;
+        right: 0;
+        width: 100%;
+        height: 0.1rem;
+        background: $black;
+        &:nth-of-type(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-of-type(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
     @media (max-width: 767px) {
-      max-width: 31.5rem;
+      width: 31.5rem;
       padding: 2rem 2.1rem 1.4rem 2rem;
     }
   }
@@ -647,22 +675,6 @@ a {
       padding-top: 0.9rem;
       @media (max-width: 767px) {
         padding-top: 0.7rem;
-      }
-    }
-    span {
-      position: absolute;
-      display: block;
-      top: -0.7rem;
-      right: -1.3rem;
-      width: 1.5rem;
-      height: 0.1rem;
-      background: $black;
-      cursor: pointer;
-      &:nth-of-type(1) {
-        transform: rotate(45deg);
-      }
-      &:nth-of-type(2) {
-        transform: rotate(-45deg);
       }
     }
   }
@@ -791,8 +803,9 @@ a {
       height: 40rem;
       @media (max-width:767px) {
         max-width: none;
+        aspect-ratio: 375 / 315;
         width: 100%;
-        height: 30rem;
+        height: clamp(300px, calc(300 / 375 * 100vw), 400px);
       }
       iframe {
         width: 100%;
@@ -925,18 +938,18 @@ a {
     &-gender {
       display: flex;
       @media (max-width: 767px) {
-        column-gap: 5rem;
+        column-gap: clamp(10px, calc(50 / 375 * 100vw), 50px);
       }
       dt {
         @media (max-width: 767px) {
-          width: 4rem;
+          width: clamp(20px, calc(40 / 375 * 100vw), 40px);
         }
       }
       dd {
         display: flex;
         column-gap: 7.4rem;
         @media (max-width: 767px) {
-          column-gap: 3.9rem;
+          column-gap: clamp(10px, calc(39 / 375 * 100vw), 39px);
         }
         label {
           display: flex;
@@ -1018,6 +1031,9 @@ a {
         margin-top: 0;
       }
     }
+    p {
+  cursor: pointer;
+    }
     &-question {
       .form-label {
         font-size: map.get($font-sizes, md);
@@ -1028,37 +1044,40 @@ a {
         }
       }
       dd {
+        display: flex;
+        flex-wrap: wrap;
         margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
         row-gap: 1.5rem;
         @media (max-width: 767px) {
-          grid-template-columns: repeat(2, 1fr);
           row-gap: 0.5rem;
-          margin-top: 0rem;
         }
-        p {
+        .checkbox-item {
           display: flex;
-          align-items: center;
-          column-gap: calc(20 / 1080 * 100vw);
-          cursor: pointer;
-          position: relative;
+          width: 25%;
+          pointer-events: none;
           line-height: calc(25 / 18);
           @media (max-width: 767px) {
+            width: 50%;
             font-size: map.get($font-sizes, sm);
             line-height: calc(25 / 16);
-            column-gap: 1rem;
           }
-          input {
-            all: revert;
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            margin: 0;
-            &:hover {
+          input[type="checkbox"] {
+            & + span {
+              display: block;
+              padding-left: 4rem;
+              position: relative;
+              pointer-events: auto;
               cursor: pointer;
-            }
-            &:checked + .checkbox-ui {
+              &::before {
+                content: '';
+                width: 2rem;
+                height: 2rem;
+                background: #FFF;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+              }
               &::after {
                 content: "";
                 position: absolute;
@@ -1066,18 +1085,17 @@ a {
                 height: 0.5rem;
                 border-left: 0.2rem solid $black;
                 border-bottom: 0.2rem solid $black;
-                transform: rotate(-45deg);
-                top: 0.6rem;
+                transform: translateY(-50%) rotate(-45deg);
+                top: 50%;
                 left: 0.5rem;
+                display: none;
               }
             }
-          }
-          .checkbox-ui {
-            width: 2rem;
-            height: 2rem;
-            background-color: $white;
-            position: relative;
-            pointer-events: none;
+            &:checked + span {
+              &::after {
+                display: block;
+              }
+            }
           }
         }
       }
@@ -1149,10 +1167,10 @@ a {
       }
     }
     &__submit {
-      // padding-block: 0.7rem 0.8rem;
+      padding-block: 0.75rem 0.75rem;
       display: flex;
       justify-content: center;
-      align-items: center;
+      // align-items: center;
       width: 30rem;
       height: 5rem;
       margin: 0 auto;
@@ -1217,8 +1235,11 @@ a {
       }
     }
     &--link {
-      font-size: map.get($font-sizes, no);
+      font-size: calc(18 / 1080 * 100vw);
       line-height: calc(33 / 18);
+      @media (max-width: 767px) {
+        font-size: map.get($font-sizes, no);
+      }
     }
   }
   &__sns {

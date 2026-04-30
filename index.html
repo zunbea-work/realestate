@@ -259,7 +259,7 @@
                     <div class="works__text">
                       <p>
                         【新築】<br>
-                        東京都A.F様自宅件事務所
+                        東京都A.F様自宅兼事務所
                       </p>
                     </div>
                   </div>
@@ -289,8 +289,10 @@
               <div class="modal-content">
                 <img src="./img/PC_WORKS_modal_01.jpg" alt="【新築】長崎県T.O様自宅">
                 <p>【新築】長崎県T.O様自宅</p>
-                <span class="modal-close"></span>
-                <span class="modal-close"></span>
+                <div class="modal-close">
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
@@ -299,9 +301,9 @@
               <div class="modal-content">
                 <img src="./img/PC_WORKS_modal_02.jpg" alt="【リノベーション】京都府カトリック丹波教会">
                 <p>【リノベーション】京都府カトリック丹波教会</p>
-                <div>
-                  <span class="modal-close"></span>
-                  <span class="modal-close"></span>
+                <div class="modal-close">
+                  <span></span>
+                  <span></span>
                 </div>
               </div>
             </div>
@@ -310,9 +312,11 @@
             <div class="modal-body">
               <div class="modal-content">
                 <img src="./img/PC_WORKS_modal_03.jpg" alt="【新築】東京都A.F様自宅件事務所">
-                <p>【新築】東京都A.F様自宅件事務所</p>
-                <span class="modal-close"></span>
-                <span class="modal-close"></span>
+                <p>【新築】東京都A.F様自宅兼事務所</p>
+                <div class="modal-close">
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
@@ -321,8 +325,10 @@
               <div class="modal-content">
                 <img src="./img/PC_WORKS_modal_04.jpg" alt="【都市開発】山形県銀山温泉協同組合">
                 <p>【都市開発】山形県銀山温泉協同組合</p>
-                <span class="modal-close"></span>
-                <span class="modal-close"></span>
+                <div class="modal-close">
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
@@ -571,46 +577,38 @@
                   何を見て当社HPを知りましたか？(複数回答可)　*
                 </dt>
                 <dd>
-                  <p>
+                  <label class="checkbox-item">
                     <input type="checkbox" name="question" value="internet">
-                    <span class="checkbox-ui"></span>
-                    <span class="checkname">インターネット</span>
-                  </p>
-                  <p>
+                    <span>インターネット</span>
+                  </label>
+                  <label class="checkbox-item">
                     <input type="checkbox" name="question" value="flyer">
-                    <span class="checkbox-ui"></span>
                     <span class="checkname">チラシ</span>
-                  </p>
-                  <p>
+                  </label>
+                  <label class="checkbox-item">
                     <input type="checkbox" name="question" value="housing">
-                    <span class="checkbox-ui"></span>
                     <span class="checkname">住宅展示場</span>
-                  </p>
-                  <p>
+                  </label>
+                  <label class="checkbox-item">
                     <input type="checkbox" name="question" value="signboard">
-                    <span class="checkbox-ui"></span>
                     <span class="checkname">看板</span>
-                  </p>
-                  <p>
+                  </label>
+                  <label class="checkbox-item">
                     <input type="checkbox" name="question" value="sns">
-                    <span class="checkbox-ui"></span>
                     <span class="checkname">各種SNS</span>
-                  </p>
-                  <p>
+                  </label>
+                  <label class="checkbox-item">
                     <input type="checkbox" name="question" value="introduction">
-                    <span class="checkbox-ui"></span>
                     <span class="checkname">紹介</span>
-                  </p>
-                  <p>
+                  </label>
+                  <label class="checkbox-item">
                     <input type="checkbox" name="question" value="passing">
-                    <span class="checkbox-ui"></span>
                     <span class="checkname">通りがかり</span>
-                  </p>
-                  <p>
-                    <input type="checkbox" name="question" value="other">
-                    <span class="checkbox-ui"></span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="question" value="other" id="other">
                     <span class="checkname">その他</span>
-                  </p>
+                  </label>
                 </dd>
               </dl>
 
@@ -754,6 +752,7 @@
         </div>
       </footer>
 
+      <!-- 戻るボタン -->
       <div id="fas-area">
         <i class="arrow"></i>
       </div>
