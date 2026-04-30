@@ -1049,6 +1049,7 @@ a {
         margin-top: 1rem;
         row-gap: 1.5rem;
         @media (max-width: 767px) {
+          margin-top: 0;
           row-gap: 0.5rem;
         }
         .checkbox-item {
@@ -1068,6 +1069,9 @@ a {
               position: relative;
               pointer-events: auto;
               cursor: pointer;
+              @media (max-width: 767px) {
+                padding-left: 3rem;
+              }
               &::before {
                 content: '';
                 width: 2rem;
@@ -1136,15 +1140,17 @@ a {
         }
         &__contents {
           padding: 3rem;
-          font-size: map.get($font-sizes, sm);
-          line-height: calc(31 / 16);
+          font-size: map.get($font-sizes, no);
+          line-height: calc(31 / 18);
           @media (max-width: 767px) {
             padding: 2rem 3rem 2rem 2rem;
+            font-size: map.get($font-sizes, sm);
             line-height: calc(33 / 16);
           }
           h3 {
             font-size: map.get($font-sizes, no);
             line-height: calc(31 / 18);
+            font-weight: 700;
             @media (max-width: 767px) {
               font-size: map.get($font-sizes, sm);
               line-height: calc(33 / 16);

@@ -1264,6 +1264,7 @@ a:hover {
 }
 @media (max-width: 767px) {
   .contact .form-question dd {
+    margin-top: 0;
     row-gap: 0.5rem;
   }
 }
@@ -1288,6 +1289,11 @@ a:hover {
   position: relative;
   pointer-events: auto;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .contact .form-question dd .checkbox-item input[type=checkbox] + span {
+    padding-left: 3rem;
+  }
 }
 .contact .form-question dd .checkbox-item input[type=checkbox] + span::before {
   content: "";
@@ -1356,18 +1362,20 @@ a:hover {
 }
 .contact .form-conditions .conditions__contents {
   padding: 3rem;
-  font-size: 1.6rem;
-  line-height: 1.9375;
+  font-size: 1.8rem;
+  line-height: 1.7222222222;
 }
 @media (max-width: 767px) {
   .contact .form-conditions .conditions__contents {
     padding: 2rem 3rem 2rem 2rem;
+    font-size: 1.6rem;
     line-height: 2.0625;
   }
 }
 .contact .form-conditions .conditions__contents h3 {
   font-size: 1.8rem;
   line-height: 1.7222222222;
+  font-weight: 700;
 }
 @media (max-width: 767px) {
   .contact .form-conditions .conditions__contents h3 {
