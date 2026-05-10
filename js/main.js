@@ -21,7 +21,8 @@ $(function () {
     const isPC = window.matchMedia("(min-width:768px)").matches;
     const offset = isPC ? 81 : 51;
 
-    if(scrollTop > aboutPos - offset) {
+    // if(scrollTop > aboutPos - offset) {
+    if(scrollTop > aboutPos) {
       $('.header').addClass('change');
     } else {
       $('.header').removeClass('change');

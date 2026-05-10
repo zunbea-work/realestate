@@ -98,20 +98,26 @@ a {
 }
 .section-title {
   text-align: center;
+  display: flex;
+  flex-direction: column;
   .en {
     font-size: map.get($font-sizes, xl);
     line-height: calc(33 / 30);
-    letter-spacing: 0.3em;
+    letter-spacing: 0.257em;
     color: $main-color;
-    display: block;
+    display: inline-block;
+    @media (max-width: 767px) {
+      letter-spacing: 0.3em;
+      padding-left: 0.8rem;
+    }
   }
 
   .ja {
     font-size: map.get($font-sizes, md);
     line-height: calc(33 / 20);
-    letter-spacing: 0.3em;
+    letter-spacing: 0.257em;
     margin-top: 0.6rem;
-    display: block;
+    display: inline-block;
   }
 }
 .mt-5 {
@@ -235,7 +241,7 @@ a {
     }
     &--list {
       display: flex;
-      column-gap: clamp(3rem, calc(30 / 1080 * 100vw), 3rem);
+      column-gap: clamp(1rem, calc(30 / 1080 * 100vw), 3rem);
       @media (max-width: 767px) {
         flex-direction: column;
       }
@@ -262,7 +268,7 @@ a {
             width: 100%;
             height: 0.1rem;
             position: absolute;
-            bottom: 3.15rem;
+            bottom: 2.75rem;
             background-color: $white;
             transform: scaleX(0);
             transition: all 0.4s;
@@ -270,11 +276,10 @@ a {
           }
         }
         &:hover {
-          opacity: 0.7;
+          opacity: 1;
           @media (max-width: 768px) {
             background: $black;
             color: $white;
-            opacity: 1;
           }
           &::before {
             transform: scaleX(1);
@@ -510,7 +515,8 @@ a {
       margin-top: 3.8rem;
     }
     .service__textarea {
-      padding: 5rem 2.7rem 4.2rem 0;
+      padding-block: 5rem 4.2rem;
+      padding-right: clamp(1rem, calc(27 / 1080 * 100vw), 2.7rem);
       @media (max-width: 767px) {
         padding: 2rem 2rem 1.2rem;
       }
@@ -531,7 +537,8 @@ a {
       }
     }
     .service__textarea {
-      padding: 5rem 0 4.2rem 4rem;
+      padding-block: 5rem 4.2rem;
+      padding-left: clamp(1rem, calc(40 / 1080 * 100vw), 4rem);
       @media (max-width: 767px) {
         padding: 2rem 2rem 1.2rem;
       }
@@ -545,7 +552,8 @@ a {
       margin-top: 5rem;
     }
     .service__textarea {
-      padding: 5rem 3.8rem 4.2rem 0;
+      padding-block: 5rem 4.2rem;
+      padding-right: clamp(1rem, calc(38 / 1080 * 100vw), 3.8rem);
       @media (max-width: 767px) {
         padding: 2rem 2rem 1.2rem;
       }
@@ -567,7 +575,7 @@ a {
   }
   &__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     column-gap: calc(40 / 920 * 100%);
     @media (max-width: 767px) {
       flex-direction: column;
@@ -608,6 +616,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
+    padding-inline: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -643,8 +652,8 @@ a {
       width: 1.5rem;
       height: 1.5rem;
       position: absolute;
-      top: -1.5rem;
-      right: -1.5rem;
+      top: -0.5rem;
+      right: -0.7rem;
       cursor: pointer;
       span {
         position: absolute;
@@ -719,22 +728,33 @@ a {
         line-height: calc(33 / 16);
       }
       dd {
-        font-size: clamp(1.8rem, calc(18 / 1080 * 100vw), 1.8rem);
+        font-size: clamp(1.6rem, calc(18 / 1080 * 100vw), 1.8rem);
         line-height: calc(25 / 18);
-        padding-top: 0.7rem;
+        // padding-top: 0.7rem;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        @media (max-width: 767px) {
+          font-size: map.get($font-sizes, no);
+        }
       }
     }
     &-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
+      // display: grid;
+      // grid-template-columns: auto 1fr;
+      display: flex;
+      align-items: baseline;
       column-gap: clamp(6.9rem, calc(69 / 1080 * 100vw), 6.9rem);
-      padding-block: 1.3rem 1.2rem;
+      padding-block: 1.5rem 1.4rem;
       @media (max-width: 767px) {
         column-gap: calc(19 / 375 * 100vw);
+      }
+      dt {
+        width: 5.3rem;
+      }
+      dd {
+        flex: 1;
       }
     }
     &-link {
@@ -800,12 +820,11 @@ a {
     &-iframe {
       max-width: 60rem;
       width: calc(600 / 1080 * 100vw);
-      height: 40rem;
+      aspect-ratio: 600 / 400;
       @media (max-width:767px) {
         max-width: none;
-        aspect-ratio: 375 / 315;
+        aspect-ratio: 315 / 300;
         width: 100%;
-        height: clamp(300px, calc(300 / 375 * 100vw), 400px);
       }
       iframe {
         width: 100%;
@@ -821,21 +840,20 @@ a {
     color: $white;
     font-weight: 600;
     @media (max-width: 767px) {
-      margin-top: 2rem;
+      margin-top: 1rem;
       width: 100%;
     }
     &--wrapper {
       display: flex;
       justify-content: right;
       padding-block: 4.9rem 4.2rem;
-      // padding-right: ;
       @media (max-width: 767px) {
         padding: 1.9rem 2rem 1.2rem;
         justify-content: left;
       }
     }
     &--inner {
-      width: clamp(26rem, calc(275 / 1080 * 100vw), 27.5rem);
+      width: clamp(23rem, calc(275 / 1080 * 100vw), 27.5rem);
     }
     &__address,
     &__tel .phone,
@@ -993,6 +1011,10 @@ a {
           &:hover {
             cursor: pointer;
           }
+          @media (max-width: 767px) {
+            font-size: map.get($font-sizes, sm);
+            line-height: calc(25 / 16);
+          }
         }
         &-arrow {
           position: absolute;
@@ -1061,6 +1083,11 @@ a {
             width: 50%;
             font-size: map.get($font-sizes, sm);
             line-height: calc(25 / 16);
+          }
+          .checkname {
+            @media (max-width: 767px) {
+              font-size: clamp(1.2rem, calc(16 / 375 * 100vw), 1.6rem);
+            }
           }
           input[type="checkbox"] {
             & + span {
@@ -1173,7 +1200,7 @@ a {
       }
     }
     &__submit {
-      padding-block: 0.75rem 0.75rem;
+      padding-block: 0.7rem 0.8rem;
       display: flex;
       justify-content: center;
       // align-items: center;
@@ -1187,6 +1214,7 @@ a {
       border: solid 0.1rem $main-color;
       transition: all 0.4s;
       @media (max-width: 767px) {
+        max-width: 31.5rem;
         width: 100%;
       }
       &:hover {
@@ -1241,7 +1269,7 @@ a {
       }
     }
     &--link {
-      font-size: calc(18 / 1080 * 100vw);
+      font-size: clamp(1.3rem, calc(18 / 1080 * 100vw), 1.8rem);
       line-height: calc(33 / 18);
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, no);
