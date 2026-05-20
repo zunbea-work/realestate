@@ -128,6 +128,9 @@ a {
     }
   }
 }
+label {
+  cursor: pointer;
+}
 
 // Top戻り矢印
 #fas-area {
@@ -149,8 +152,6 @@ a {
   @media (max-width: 767px) {
     right: 2rem;
     bottom: 6rem;
-    // right: 0;
-    // bottom: 0;
     width: 5rem;
     height: 5rem;
   }
@@ -255,6 +256,7 @@ a {
         font-size: clamp(1.4rem,calc(18 / 1080 * 100vw), 1.8rem);
         color: $white;
         position: relative;
+        transition: background 0.4s, color 0.4s;
         @media (max-width: 767px) {
           width: 100%;
           height: 5.8rem;
@@ -271,7 +273,7 @@ a {
             bottom: 2.75rem;
             background-color: $white;
             transform: scaleX(0);
-            transition: all 0.4s;
+            transition: transform 0.4s;
             transform-origin: left;
           }
         }
@@ -447,12 +449,30 @@ a {
   @media (max-width: 767px) {
     padding: 5rem 3rem;
   }
+  &__contents {
+    margin-top: 6.8rem;
+    @media (max-width:767px) {
+      margin-top: 3.8rem;
+    }
+  }
+  &__flex {
+    display: flex;
+    align-items: flex-start;
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+    &:not(:first-of-type) {
+      margin-top: 8rem;
+      @media (max-width: 767px) {
+        margin-top: 5rem;
+      }
+    }
+  }
   &__image {
-    max-width: 60rem;
-    width: calc(600 / 1080 * 100vw);
-    height: 100%;
+    width: clamp(500px, calc(600 / 1080 * 100vw), 600px);
+    position: relative;
+    z-index: 10;
     @media (max-width: 767px) {
-      max-width: none;
       width: 100%;
     }
     p {
@@ -465,97 +485,101 @@ a {
     }
   }
   &__textarea {
-    background-color: $main-color;
-    max-width: 50rem;
-    width: calc(500 / 1080 * 100vw);
-    margin-top: -19.9rem;
+    width: 32rem;
+    background: $main-color;
+    margin-top: calc(145 / 1080 * 100vw);
+    padding: 5rem 0 4.2rem;
+    padding-right: 0;
     color: $white;
+    position: relative;
     @media (max-width: 767px) {
-      max-width: none;
-      width: 100%;
       margin-top: 0.6rem;
+      padding: 2rem 0 1.2rem;
+      width: 100%;
     }
     h3 {
-      font-size: map.get($font-sizes, lg);
+      font-size: calc(25 / 1080 * 100vw);
       line-height: calc(33 / 25);
-      font-weight: 600;
+      position: relative;
       @media (max-width: 767px) {
-        font-size: clamp(1.7rem, calc(20 / 375 * 100vw), 2rem);
+        font-size: map.get($font-sizes, md);
         line-height: calc(25 / 20);
       }
     }
     p {
-      font-size: clamp(1.4rem, calc(16 / 375 * 100vw), 1.6rem);
+      font-size: calc(16 / 1080 * 100vw);
       line-height: calc(25 / 16);
-      font-weight: 600;
+      position: relative;
       margin-top: 1.7rem;
       @media (max-width: 767px) {
+        font-size: map.get($font-sizes, sm);
+        line-height: calc(25 / 16);
         margin-top: 1.4rem;
       }
     }
   }
-
-  // 一番目と三番目の要素で共通
   .contents-first,
   .contents-third {
     .service__textarea {
-      display: flex;
-      margin-left: auto;
-      justify-content: right;
-      @media (max-width: 767px) {
-        justify-content: left;
+      &::before {
+        content: '';
+        width: clamp(400px, calc(500 / 1080 * 100vw), 500px);
+        height: 100%;
+        background: $main-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @media (max-width: 767px) {
+          width: 100%;
+        }
       }
     }
   }
-
-  // 一番目の要素
   .contents-first {
-    margin-top: 6.8rem;
+    .service__textarea {
+      padding-left: 6.8rem;
+      @media (max-width: 767px) {
+        padding-left: 2rem;
+      }
+    }
+  }
+  .contents-second {
+    flex-direction: row-reverse;
     @media (max-width: 767px) {
-      margin-top: 3.8rem;
+      flex-direction: column;
     }
     .service__textarea {
-      padding-block: 5rem 4.2rem;
-      padding-right: clamp(1rem, calc(27 / 1080 * 100vw), 2.7rem);
+      padding-left: 4rem;
       @media (max-width: 767px) {
-        padding: 2rem 2rem 1.2rem;
+        padding-left: 2rem;
       }
-    }
-  }
-
-  // 二番目の要素
-  .contents-second {
-    margin-top: 8rem;
-    @media (max-width: 767px) {
-      margin-top: 5rem;
     }
     .service__image {
-      margin-left: auto;
-      text-align: right;
-      @media (max-width: 767px) {
-        text-align: left;
+      p {
+        text-align: right;
+        @media (max-width: 767px) {
+          text-align: left;
+        }
       }
     }
     .service__textarea {
-      padding-block: 5rem 4.2rem;
-      padding-left: clamp(1rem, calc(40 / 1080 * 100vw), 4rem);
-      @media (max-width: 767px) {
-        padding: 2rem 2rem 1.2rem;
+      &::before {
+      content: '';
+        width: calc(500 / 1080 * 100vw);
+        height: 100%;
+        background: $main-color;
+        position: absolute;
+        right: initial;
+        top: 0;
+        left: 0;
       }
     }
   }
-
-  // 三番目の要素
   .contents-third {
-    margin-top: 8rem;
-    @media (max-width: 767px) {
-      margin-top: 5rem;
-    }
     .service__textarea {
-      padding-block: 5rem 4.2rem;
-      padding-right: clamp(1rem, calc(38 / 1080 * 100vw), 3.8rem);
+      padding-left: 5.8rem;
       @media (max-width: 767px) {
-        padding: 2rem 2rem 1.2rem;
+        padding-left: 2rem;
       }
     }
   }
@@ -652,8 +676,8 @@ a {
       width: 1.5rem;
       height: 1.5rem;
       position: absolute;
-      top: -0.5rem;
-      right: -0.7rem;
+      top: -1.2rem;
+      right: -1.2rem;
       cursor: pointer;
       span {
         position: absolute;
@@ -816,17 +840,19 @@ a {
       margin-top: 3.8rem;
     }
   }
-  &__image {
+  &__map {
     &-iframe {
       max-width: 60rem;
       width: calc(600 / 1080 * 100vw);
       aspect-ratio: 600 / 400;
+      display: block;
       @media (max-width:767px) {
         max-width: none;
         aspect-ratio: 315 / 300;
         width: 100%;
       }
       iframe {
+        display: block;
         width: 100%;
         height: 100%;
       }
@@ -840,7 +866,7 @@ a {
     color: $white;
     font-weight: 600;
     @media (max-width: 767px) {
-      margin-top: 1rem;
+      margin-top: 2rem;
       width: 100%;
     }
     &--wrapper {
@@ -853,7 +879,7 @@ a {
       }
     }
     &--inner {
-      width: clamp(23rem, calc(275 / 1080 * 100vw), 27.5rem);
+      width: clamp(25rem, calc(275 / 1080 * 100vw), 27.5rem);
     }
     &__address,
     &__tel .phone,
@@ -1177,7 +1203,6 @@ a {
           h3 {
             font-size: map.get($font-sizes, no);
             line-height: calc(31 / 18);
-            font-weight: 700;
             @media (max-width: 767px) {
               font-size: map.get($font-sizes, sm);
               line-height: calc(33 / 16);
@@ -1200,7 +1225,7 @@ a {
       }
     }
     &__submit {
-      padding-block: 0.7rem 0.8rem;
+      padding-block: 0.8rem 0.7rem;
       display: flex;
       justify-content: center;
       // align-items: center;
@@ -1212,13 +1237,13 @@ a {
       font-size: map.get($font-sizes, md);
       line-height: calc(33 / 20);
       border: solid 0.1rem $main-color;
-      transition: all 0.4s;
+      transition: background 0.4s, color 0.4s;
       @media (max-width: 767px) {
         max-width: 31.5rem;
         width: 100%;
       }
       &:hover {
-        background-color: $white;
+        background: $white;
         color: $main-color;
       }
     }
@@ -1234,13 +1259,14 @@ a {
       padding: 5rem 3rem;
     }
     h3 {
-      font-size: map.get($font-sizes, md);
+      font-size: clamp(1.7rem, calc(20 / 1080 * 100vw), 2rem);
       line-height: calc(33 / 20);
       border-bottom: 0.1rem solid $black;
       max-width: 72.2rem;
       margin: 0 auto;
       padding-bottom: 2.8rem;
       @media (max-width: 767px) {
+        font-size: map.get($font-sizes, md);
         padding-bottom: 1.9rem;
       }
     }
@@ -1269,7 +1295,7 @@ a {
       }
     }
     &--link {
-      font-size: clamp(1.3rem, calc(18 / 1080 * 100vw), 1.8rem);
+      font-size: clamp(1.7rem, calc(18 / 1080 * 100vw), 1.8rem);
       line-height: calc(33 / 18);
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, no);
