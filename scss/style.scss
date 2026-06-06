@@ -454,7 +454,7 @@ label {
 
 // service
 .service {
-  padding: 8rem 3rem;
+  padding: 8rem 3rem 13.1rem;
   @media (max-width: 767px) {
     padding: 5rem 3rem;
   }
@@ -515,7 +515,7 @@ label {
       }
     }
     p {
-      font-size: clamp(1.3rem, calc(18 / 980 * 100vw), 1.8rem);
+      font-size: clamp(1.3rem, calc(16 / 980 * 100vw), 1.6rem);
       line-height: calc(25 / 16);
       position: relative;
       margin-top: clamp(1.2rem, calc(17 / 980 * 100vw), 1.7rem);

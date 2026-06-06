@@ -526,7 +526,7 @@ label {
 }
 
 .service {
-  padding: 8rem 3rem;
+  padding: 8rem 3rem 13.1rem;
 }
 @media (max-width: 767px) {
   .service {
@@ -612,7 +612,7 @@ label {
   }
 }
 .service__textarea p {
-  font-size: clamp(1.3rem, 1.8367346939vw, 1.8rem);
+  font-size: clamp(1.3rem, 1.6326530612vw, 1.6rem);
   line-height: 1.5625;
   position: relative;
   margin-top: clamp(1.2rem, 1.7346938776vw, 1.7rem);
