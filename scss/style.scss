@@ -197,7 +197,7 @@ label {
 // header
 .header {
   width: 100%;
-  height: clamp(8rem, calc(80 / 1080 * 100vw), 8rem);
+  height: 8rem;
   padding-inline: 3rem;
   display: flex;
   justify-content: space-between;
@@ -220,11 +220,17 @@ label {
   }
   &__logo {
     a {
-      font-size: clamp(1.7rem, calc(20 / 1080 * 100vw), 2rem);
+      font-size: map.get($font-sizes, md);
       line-height: calc(33 / 20);
       font-weight: 500;
       display: block;
       color: $white;
+      @media (max-width: 880px) {
+        font-size: map.get($font-sizes, no);
+      }
+      @media (max-width: 800px) {
+        font-size: map.get($font-sizes, sm);
+      }
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, md);
       }
@@ -242,7 +248,7 @@ label {
     }
     &--list {
       display: flex;
-      column-gap: clamp(1rem, calc(30 / 1080 * 100vw), 3rem);
+      column-gap: 3rem;
       @media (max-width: 767px) {
         flex-direction: column;
       }
@@ -253,10 +259,16 @@ label {
         display: flex;
         align-items: center;
         font-weight: 500;
-        font-size: clamp(1.4rem,calc(18 / 1080 * 100vw), 1.8rem);
+        font-size: 1.8rem;
         color: $white;
         position: relative;
         transition: background 0.4s, color 0.4s;
+        @media (max-width: 880px) {
+          font-size: map.get($font-sizes, sm);
+        }
+        @media (max-width: 800px) {
+          font-size: 1.4rem;
+        }
         @media (max-width: 767px) {
           width: 100%;
           height: 5.8rem;
@@ -361,12 +373,12 @@ label {
     width: 100%;
     height: 100%;
     &--text {
-      width: calc(567 / 1080 * 100vw);
+      width: 56.7rem;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-49%, -43%);
-      font-size: calc(40 / 1080 * 100vw);
+      font-size: map.get($font-sizes, xxl);
       line-height: calc(70 / 40);
       font-weight: 600;
       letter-spacing: 0.3em;
@@ -374,8 +386,8 @@ label {
       text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 1);
       z-index: 100;
       @media (max-width: 767px) {
-        width: calc(375 / 375 * 100vw);
-        font-size: calc(30 / 375 * 100vw);
+        width: 37.5rem;
+        font-size: map.get($font-sizes, xl);
         line-height: calc(60 / 30);
         transform: translate(-49%, -45%);
       }
@@ -399,26 +411,23 @@ label {
   position: relative;
   &__textarea {
     position: absolute;
-    top: clamp(8rem, calc(110 / 1080 * 100vw), 30rem);
-    left: clamp(10rem, calc(135 / 1080 * 100vw), 30rem);
+    top: clamp(7rem, calc(110 / 1080 * 100vw), 11rem);
+    left: clamp(9rem, calc(135 / 1080 * 100vw), 13.5rem);
     display: flex;
     flex-direction: row-reverse;
-    column-gap: clamp(3rem, calc(45 / 1080 * 100vw), 9rem);
+    column-gap: clamp(2rem, calc(45 / 1080 * 100vw), 4.5rem);
     @media (max-width: 767px) {
-      top: 0;
-      left: 0;
+      inset: 0;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: calc(375 / 375 * 100vw);
-      padding-top: calc(50 / 375 * 100vw);
-      margin: 0 auto;
-      row-gap: calc(24 / 375 * 100vw);
+      margin: auto;
+      row-gap: 2.4rem;
     }
   }
   &__title {
     @include writing;
-    font-size: calc(30 / 1080 * 100vw);
+    font-size: clamp(2rem, calc(30 / 1080 * 100vw), 3rem);
     line-height: calc(30 / 30);
     letter-spacing: 0.18em;
     @media (max-width: 767px) {
@@ -431,7 +440,7 @@ label {
   &__text {
     p {
       @include writing;
-      font-size: calc(18 / 1080 * 100vw);
+      font-size: clamp(1.3rem, calc(18 / 1080 * 100vw), 1.8rem);
       line-height: calc(48 / 18);
       letter-spacing: 0.37em;
       @media (max-width: 767px) {
@@ -458,18 +467,18 @@ label {
   &__flex {
     display: flex;
     align-items: flex-start;
-      @media (max-width: 767px) {
-        flex-direction: column;
-      }
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
     &:not(:first-of-type) {
-      margin-top: 8rem;
+      margin-top: clamp(10rem, calc(131 / 980 * 100vw), 13.1rem);;
       @media (max-width: 767px) {
         margin-top: 5rem;
       }
     }
   }
   &__image {
-    width: clamp(500px, calc(600 / 1080 * 100vw), 600px);
+    width: clamp(45rem, calc(600 / 980 * 100vw), 60rem);
     position: relative;
     z-index: 10;
     @media (max-width: 767px) {
@@ -486,10 +495,9 @@ label {
   }
   &__textarea {
     width: 32rem;
-    background: $main-color;
-    margin-top: calc(145 / 1080 * 100vw);
-    padding: 5rem 0 4.2rem;
-    padding-right: 0;
+    margin-top: clamp(10rem, calc(145 / 980 * 100vw), 14.5rem);
+    padding-top: clamp(4rem, calc(50 / 980 * 100vw), 5rem);
+    padding-bottom: clamp(3.5rem, calc(42 / 980 * 100vw), 4.2rem);
     color: $white;
     position: relative;
     @media (max-width: 767px) {
@@ -498,7 +506,7 @@ label {
       width: 100%;
     }
     h3 {
-      font-size: calc(25 / 1080 * 100vw);
+      font-size: clamp(1.8rem, calc(25 / 980 * 100vw), 2.5rem);
       line-height: calc(33 / 25);
       position: relative;
       @media (max-width: 767px) {
@@ -507,10 +515,10 @@ label {
       }
     }
     p {
-      font-size: calc(16 / 1080 * 100vw);
+      font-size: clamp(1.3rem, calc(18 / 980 * 100vw), 1.8rem);
       line-height: calc(25 / 16);
       position: relative;
-      margin-top: 1.7rem;
+      margin-top: clamp(1.2rem, calc(17 / 980 * 100vw), 1.7rem);
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, sm);
         line-height: calc(25 / 16);
@@ -521,23 +529,22 @@ label {
   .contents-first,
   .contents-third {
     .service__textarea {
-      &::before {
-        content: '';
-        width: clamp(400px, calc(500 / 1080 * 100vw), 500px);
-        height: 100%;
-        background: $main-color;
-        position: absolute;
-        top: 0;
-        right: 0;
-        @media (max-width: 767px) {
-          width: 100%;
-        }
+      width: clamp(40rem, calc(500 / 980 * 100vw), 50rem);
+      height: clamp(15rem, calc(250 / 980 * 100vw), 25rem);
+      background: $main-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+      @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        position: static;
       }
     }
   }
   .contents-first {
     .service__textarea {
-      padding-left: 6.8rem;
+      padding-left: clamp(20rem, calc(248 / 980 * 100vw), 24.8rem);
       @media (max-width: 767px) {
         padding-left: 2rem;
       }
@@ -563,24 +570,46 @@ label {
       }
     }
     .service__textarea {
-      &::before {
-      content: '';
-        width: calc(500 / 1080 * 100vw);
-        height: 100%;
-        background: $main-color;
-        position: absolute;
-        right: initial;
-        top: 0;
-        left: 0;
+      width: clamp(40rem, calc(500 / 980 * 100vw), 50rem);
+      height: clamp(15rem, calc(250 / 980 * 100vw), 25rem);
+      background: $main-color;
+      position: absolute;
+      right: initial;
+      top: 0;
+      left: 0;
+      @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        position: static;
       }
     }
   }
   .contents-third {
     .service__textarea {
-      padding-left: 5.8rem;
+      padding-left: clamp(18rem, calc(238 / 980 * 100vw), 23.8rem);
       @media (max-width: 767px) {
         padding-left: 2rem;
       }
+    }
+  }
+}
+// service共通
+.service__image {
+  p {
+    @media (max-width: 767px) {
+      font-size: calc(16 / 375 * 100vw);
+    }
+  }
+}
+.service__textarea {
+  h3 {
+    @media (max-width: 767px) {
+      font-size: calc(20 / 375 * 100vw);
+    }
+  }
+  p {
+    @media (max-width: 767px) {
+      font-size: calc(16 / 375 * 100vw);
     }
   }
 }
@@ -619,11 +648,11 @@ label {
     }
   }
   &__text {
-    font-size: clamp(1.6rem, calc(16 / 1080 * 100vw),1.6rem);
+    font-size: clamp(1.2rem, calc(16 / 1080 * 100vw), 1.6rem);
     line-height: calc(25 / 16);
     padding-top: 1.9rem;
     @media (max-width: 767px) {
-      font-size: map.get($font-sizes, sm);
+      font-size: calc(16 / 375 * 100vw);
       padding-top: 0.9rem;
     }
   }
@@ -722,7 +751,7 @@ label {
   &__contents {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: clamp(6rem,calc(60 / 1080 * 100vw), 6rem);
+    column-gap: 6rem;
     margin-top: 6.8rem;
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
@@ -747,11 +776,11 @@ label {
       @media (max-width: 767px) {
         column-gap: 1.9rem;
       }
-      dt {
+      time {
         font-size: map.get($font-sizes, sm);
         line-height: calc(33 / 16);
       }
-      dd {
+      p {
         font-size: clamp(1.6rem, calc(18 / 1080 * 100vw), 1.8rem);
         line-height: calc(25 / 18);
         // padding-top: 0.7rem;
@@ -765,19 +794,17 @@ label {
       }
     }
     &-grid {
-      // display: grid;
-      // grid-template-columns: auto 1fr;
       display: flex;
       align-items: baseline;
-      column-gap: clamp(6.9rem, calc(69 / 1080 * 100vw), 6.9rem);
+      column-gap: 6.9rem;
       padding-block: 1.5rem 1.4rem;
       @media (max-width: 767px) {
         column-gap: calc(19 / 375 * 100vw);
       }
-      dt {
+      time {
         width: 5.3rem;
       }
-      dd {
+      p {
         flex: 1;
       }
     }
@@ -843,7 +870,7 @@ label {
   &__map {
     &-iframe {
       max-width: 60rem;
-      width: calc(600 / 1080 * 100vw);
+      width: clamp(30rem, calc(600 / 980 * 100vw), 60rem);
       aspect-ratio: 600 / 400;
       display: block;
       @media (max-width:767px) {
@@ -879,17 +906,26 @@ label {
       }
     }
     &--inner {
-      width: clamp(25rem, calc(275 / 1080 * 100vw), 27.5rem);
+      width: clamp(22.5rem, calc(275 / 980 * 100vw), 27.5rem);
+      @media (max-width: 767px) {
+        width: 100%;
+      }
     }
     &__address,
     &__tel .phone,
     &__mail {
-      font-size: map.get($font-sizes, sm);
+      font-size: clamp(1.2rem, calc(16 / 980 * 100vw), 1.6rem);
       line-height: calc(25 / 16);
+      @media (max-width: 767px) {
+        font-size: calc(16 / 375 * 100vw);
+      }
     }
     &__title {
-      font-size: map.get($font-sizes, md);
+      font-size: clamp(1.6rem, calc(20 / 980 * 100vw), 2rem);
       line-height: calc(33 / 20);
+      @media (max-width: 767px) {
+        font-size: calc(20 / 375 * 100vw);
+      }
     }
     &__address {
       margin-top: 0.7rem;
@@ -912,11 +948,16 @@ label {
         }
       }
       .number {
-        font-size: map.get($font-sizes, lg);
+        font-size: clamp(2.1rem, calc(25 / 980 * 100vw), 2.5rem);
         line-height: calc(25 / 25);
         @media (min-width: 768px) {
           pointer-events: none;
           cursor: default;
+        }
+        a {
+          @media (max-width: 767px) {
+            font-size: calc(25 / 375 * 100vw);
+          }
         }
       }
     }
@@ -982,18 +1023,18 @@ label {
     &-gender {
       display: flex;
       @media (max-width: 767px) {
-        column-gap: clamp(10px, calc(50 / 375 * 100vw), 50px);
+        column-gap: 5rem;
       }
       dt {
         @media (max-width: 767px) {
-          width: clamp(20px, calc(40 / 375 * 100vw), 40px);
+          width: 4rem;
         }
       }
       dd {
         display: flex;
         column-gap: 7.4rem;
         @media (max-width: 767px) {
-          column-gap: clamp(10px, calc(39 / 375 * 100vw), 39px);
+          column-gap: 3rem;
         }
         label {
           display: flex;
@@ -1112,7 +1153,8 @@ label {
           }
           .checkname {
             @media (max-width: 767px) {
-              font-size: clamp(1.2rem, calc(16 / 375 * 100vw), 1.6rem);
+              font-size: map.get($font-sizes, sm);
+              line-height: calc(25 / 16);
             }
           }
           input[type="checkbox"] {
@@ -1259,7 +1301,7 @@ label {
       padding: 5rem 3rem;
     }
     h3 {
-      font-size: clamp(1.7rem, calc(20 / 1080 * 100vw), 2rem);
+      font-size: map.get($font-sizes, md);
       line-height: calc(33 / 20);
       border-bottom: 0.1rem solid $black;
       max-width: 72.2rem;
@@ -1287,7 +1329,7 @@ label {
     &--list {
       display: flex;
       justify-content: center;
-      column-gap: 5rem;
+      column-gap: clamp(4.5rem, calc(50 / 980 * 100vw), 5rem);
       @media (max-width: 767px) {
         flex-wrap: wrap;
         column-gap: 3rem;
@@ -1295,7 +1337,7 @@ label {
       }
     }
     &--link {
-      font-size: clamp(1.7rem, calc(18 / 1080 * 100vw), 1.8rem);
+      font-size: map.get($font-sizes, no);
       line-height: calc(33 / 18);
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, no);
