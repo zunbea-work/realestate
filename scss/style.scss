@@ -205,7 +205,7 @@ label {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9990;
+  z-index: 5000;
   transition: background-color 0.4s;
   &.change {
     background-color: #4D9600;
@@ -469,6 +469,7 @@ label {
   &__flex {
     display: flex;
     align-items: flex-start;
+    position: relative;
     @media (max-width: 767px) {
       flex-direction: column;
     }
@@ -652,10 +653,10 @@ label {
   &__text {
     font-size: clamp(1.2rem, calc(16 / 1080 * 100vw), 1.6rem);
     line-height: calc(25 / 16);
-    padding-top: 1.9rem;
+    margin-top: 1.9rem;
     @media (max-width: 767px) {
       font-size: calc(16 / 375 * 100vw);
-      padding-top: 0.9rem;
+      margin-top: 0.9rem;
     }
   }
 }
@@ -798,7 +799,7 @@ label {
     &-grid {
       display: flex;
       align-items: baseline;
-      column-gap: 6.9rem;
+      column-gap: clamp(4rem, calc(69 / 1080 * 100vw), 6.9rem);
       padding-block: 1.5rem 1.4rem;
       @media (max-width: 767px) {
         column-gap: calc(19 / 375 * 100vw);
@@ -1036,7 +1037,7 @@ label {
         display: flex;
         column-gap: 7.4rem;
         @media (max-width: 767px) {
-          column-gap: 3rem;
+          column-gap: 4rem;
         }
         label {
           display: flex;
@@ -1109,21 +1110,25 @@ label {
         }
       }
     }
+    &-message {
+      dd {
+        margin-top: 1rem;
+        @media (max-width: 767px) {
+          margin-top: 0;
+        }
+      }
+    }
     &-textarea {
       background-color: $white;
       font-size: map.get($font-sizes, no);
       line-height: calc(25 / 18);
-      margin-top: 1rem;
       width: 100%;
       height: 20rem;
       padding: 1.3rem 2rem;
       display: block;
-      @media (max-width: 767px) {
-        margin-top: 0;
-      }
     }
     p {
-  cursor: pointer;
+      cursor: pointer;
     }
     &-question {
       .form-label {
@@ -1210,49 +1215,54 @@ label {
           line-height: calc(33 / 20);
         }
       }
-      .conditions {
+      dd {
         margin-top: 1rem;
-        padding: 1rem;
-        background: $white;
         @media (max-width: 767px) {
           margin-top: 0;
         }
-        &__inner {
-          width: 100%;
-          height: 28rem;
-          overflow-y: scroll;
-          @media (max-width: 767px) {
-            height: 30.3rem;
+        .conditions {
+          padding: 1rem;
+          background: $white;
+          &__inner {
+            width: 100%;
+            height: 28rem;
+            overflow-y: scroll;
+            @media (max-width: 767px) {
+              height: 30.3rem;
+            }
+            // スクロールバーの指定
+            &::-webkit-scrollbar {
+              width: 1rem;
+              background: #E3E3E3;
+            }
+            // スクロールバーのつまみ部分
+            &::-webkit-scrollbar-thumb {
+              background: #9B9B9B;
+              height: 3rem;
+            }
           }
-          // スクロールバーの指定
-          &::-webkit-scrollbar {
-            width: 1rem;
-            background: #E3E3E3;
-          }
-          // スクロールバーのつまみ部分
-          &::-webkit-scrollbar-thumb {
-            background: #9B9B9B;
-            height: 3rem;
-          }
-        }
-        &__contents {
-          padding: 3rem;
-          font-size: map.get($font-sizes, no);
-          line-height: calc(31 / 18);
-          @media (max-width: 767px) {
-            padding: 2rem 3rem 2rem 2rem;
-            font-size: map.get($font-sizes, sm);
-            line-height: calc(33 / 16);
-          }
-          h3 {
+          &__contents {
+            padding: 3rem;
             font-size: map.get($font-sizes, no);
             line-height: calc(31 / 18);
             @media (max-width: 767px) {
+              padding: 2rem 3rem 2rem 2rem;
               font-size: map.get($font-sizes, sm);
               line-height: calc(33 / 16);
             }
-            &:not(:first-of-type) {
-              margin-top: 3.1rem;
+            h3 {
+              font-size: map.get($font-sizes, no);
+              line-height: calc(31 / 18);
+              @media (max-width: 767px) {
+                font-size: map.get($font-sizes, sm);
+                line-height: calc(33 / 16);
+              }
+              &:not(:first-of-type) {
+                margin-top: 3.1rem;
+              }
+            }
+            p {
+              cursor: auto;
             }
           }
         }
