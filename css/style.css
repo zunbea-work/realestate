@@ -1474,6 +1474,7 @@ label {
   font-size: 2rem;
   line-height: 1.65;
   display: block;
+  cursor: auto;
 }
 @media (max-width: 767px) {
   .contact .form-conditions .form-label {
