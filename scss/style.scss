@@ -410,7 +410,6 @@ label {
   position: relative;
   &__textarea {
     position: absolute;
-    // top: clamp(7rem, calc(110 / 1080 * 100vw), 11rem);
     top: calc(110 / 1080 * 100vw);
     left: clamp(9rem, calc(135 / 1080 * 100vw), 13.5rem);
     margin: auto;
