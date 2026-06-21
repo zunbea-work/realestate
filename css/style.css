@@ -902,7 +902,7 @@ label {
   padding: 0.9rem 2rem 0.8rem;
 }
 .news__contents-list {
-  padding: 1rem 2rem 2.4rem;
+  padding: 1rem 2rem 2rem;
   background-color: #FFF;
 }
 .news__contents-line {
@@ -960,7 +960,7 @@ label {
           flex: 1;
 }
 .news__contents-link {
-  margin-top: 1.7rem;
+  margin-top: 1.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -988,19 +988,11 @@ label {
 }
 
 .company {
-  padding: 8rem 3rem 14.2rem;
+  padding: 8rem 3rem 13.8rem;
 }
 @media (max-width: 767px) {
   .company {
     padding: 5rem 3rem;
-  }
-}
-@media (max-width: 767px) {
-  .company__flex {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 .company__map-iframe {
@@ -1044,13 +1036,22 @@ label {
   background-color: #4D9600;
   color: #FFF;
 }
+@media (max-width: 767px) {
+  .company__contents-textarea {
+    position: static;
+    width: 100%;
+    margin-top: 2rem;
+    padding-block: 1.9rem 1.2rem;
+    padding-left: 2rem;
+  }
+}
 .company-textarea__address, .company-textarea__tel .phone, .company-textarea__mail {
   font-size: clamp(1.2rem, 1.6326530612vw, 1.6rem);
   line-height: 1.5625;
 }
 @media (max-width: 767px) {
   .company-textarea__address, .company-textarea__tel .phone, .company-textarea__mail {
-    font-size: 4.2666666667vw;
+    font-size: 1.6rem;
   }
 }
 .company-textarea__title {
@@ -1059,7 +1060,7 @@ label {
 }
 @media (max-width: 767px) {
   .company-textarea__title {
-    font-size: 5.3333333333vw;
+    font-size: 2rem;
   }
 }
 .company-textarea__address {
@@ -1099,7 +1100,7 @@ label {
 }
 @media (max-width: 767px) {
   .company-textarea__tel .number a {
-    font-size: 6.6666666667vw;
+    font-size: 2.5rem;
   }
 }
 .company-textarea__mail {

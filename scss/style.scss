@@ -758,7 +758,7 @@ label {
       padding: 0.9rem 2rem 0.8rem;
     }
     &-list {
-      padding: 1rem 2rem 2.4rem;
+      padding: 1rem 2rem 2rem;
       background-color: $white;
     }
     &-line {
@@ -801,7 +801,7 @@ label {
       }
     }
     &-link {
-      margin-top: 1.7rem;
+      margin-top: 1.6rem;
       display: flex;
       justify-content: flex-end;
       a {
@@ -824,14 +824,9 @@ label {
 
 // company
 .company {
-  padding: 8rem 3rem 14.2rem;
+  padding: 8rem 3rem 13.8rem;
   @media (max-width: 767px) {
     padding: 5rem 3rem;
-  }
-  &__flex {
-    @media (max-width: 767px) {
-      flex-direction: column;
-    }
   }
   &__map {
     &-iframe {
@@ -870,6 +865,13 @@ label {
       right: 0;
       background-color: $main-color;
       color: $white;
+      @media (max-width: 767px) {
+        position: static;
+        width: 100%;
+        margin-top: 2rem;
+        padding-block: 1.9rem 1.2rem;
+        padding-left: 2rem;
+      }
     }
   }
   &-textarea {
@@ -879,14 +881,14 @@ label {
       font-size: clamp(1.2rem, calc(16 / 980 * 100vw), 1.6rem);
       line-height: calc(25 / 16);
       @media (max-width: 767px) {
-        font-size: calc(16 / 375 * 100vw);
+        font-size: map.get($font-sizes, sm);
       }
     }
     &__title {
       font-size: clamp(1.6rem, calc(20 / 980 * 100vw), 2rem);
       line-height: calc(33 / 20);
       @media (max-width: 767px) {
-        font-size: calc(20 / 375 * 100vw);
+        font-size: map.get($font-sizes, md);
       }
     }
     &__address {
@@ -918,7 +920,7 @@ label {
         }
         a {
           @media (max-width: 767px) {
-            font-size: calc(25 / 375 * 100vw);
+            font-size: map.get($font-sizes, lg);
           }
         }
       }
