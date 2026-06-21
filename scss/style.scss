@@ -73,7 +73,7 @@ img {
   height: auto;
   display: block;
 }
-a {
+a {//ここか・・・？
   transition: opacity 0.4s;
 
   &:hover {
@@ -206,7 +206,6 @@ label {
   top: 0;
   left: 0;
   z-index: 5000;
-  transition: background-color 0.4s;
   &.change {
     background-color: #4D9600;
   }
@@ -260,12 +259,11 @@ label {
         display: flex;
         align-items: center;
         font-weight: 500;
-        font-size: 1.8rem;
         color: $white;
         position: relative;
-        transition: background 0.4s, color 0.4s;
+        transition: background 0.4s;
         @media (max-width: 880px) {
-          font-size: map.get($font-sizes, sm);
+          font-size: 1.5rem;
         }
         @media (max-width: 800px) {
           font-size: 1.4rem;
@@ -412,7 +410,8 @@ label {
   position: relative;
   &__textarea {
     position: absolute;
-    top: clamp(7rem, calc(110 / 1080 * 100vw), 11rem);
+    // top: clamp(7rem, calc(110 / 1080 * 100vw), 11rem);
+    top: calc(110 / 1080 * 100vw);
     left: clamp(9rem, calc(135 / 1080 * 100vw), 13.5rem);
     margin: auto;
     display: flex;
@@ -474,7 +473,7 @@ label {
       flex-direction: column;
     }
     &:not(:first-of-type) {
-      margin-top: clamp(10rem, calc(131 / 980 * 100vw), 13.1rem);;
+      margin-top: clamp(10rem, calc(131 / 980 * 100vw), 13.1rem);
       @media (max-width: 767px) {
         margin-top: 5rem;
       }
@@ -482,7 +481,6 @@ label {
   }
   &__image {
     width: clamp(45rem, calc(600 / 980 * 100vw), 60rem);
-    position: relative;
     z-index: 10;
     @media (max-width: 767px) {
       width: 100%;
@@ -497,12 +495,10 @@ label {
     }
   }
   &__textarea {
-    width: 32rem;
     margin-top: clamp(10rem, calc(145 / 980 * 100vw), 14.5rem);
     padding-top: clamp(4rem, calc(50 / 980 * 100vw), 5rem);
     padding-bottom: clamp(3.5rem, calc(42 / 980 * 100vw), 4.2rem);
     color: $white;
-    position: relative;
     @media (max-width: 767px) {
       margin-top: 0.6rem;
       padding: 2rem 0 1.2rem;
@@ -529,11 +525,11 @@ label {
       }
     }
   }
-  .contents-first,
-  .contents-third {
+  .contents-right {
     .service__textarea {
       width: clamp(40rem, calc(500 / 980 * 100vw), 50rem);
       height: clamp(15rem, calc(250 / 980 * 100vw), 25rem);
+      padding-left: clamp(18rem, calc(238 / 980 * 100vw), 23.8rem);
       background: $main-color;
       position: absolute;
       top: 0;
@@ -542,18 +538,19 @@ label {
         width: 100%;
         height: auto;
         position: static;
-      }
-    }
-  }
-  .contents-first {
-    .service__textarea {
-      padding-left: clamp(20rem, calc(248 / 980 * 100vw), 24.8rem);
-      @media (max-width: 767px) {
         padding-left: 2rem;
       }
     }
+    &:first-child {
+      .service__textarea {
+        padding-left: clamp(18rem, calc(248 / 980 * 100vw), 24.8rem);
+        @media (max-width: 767px) {
+          padding-left: 2rem;
+        }
+      }
+    }
   }
-  .contents-second {
+  .contents-left {
     flex-direction: row-reverse;
     @media (max-width: 767px) {
       flex-direction: column;
@@ -587,32 +584,24 @@ label {
       }
     }
   }
-  .contents-third {
-    .service__textarea {
-      padding-left: clamp(18rem, calc(238 / 980 * 100vw), 23.8rem);
-      @media (max-width: 767px) {
-        padding-left: 2rem;
-      }
-    }
-  }
 }
 // service共通
 .service__image {
   p {
     @media (max-width: 767px) {
-      font-size: calc(16 / 375 * 100vw);
+      font-size: map.get($font-sizes, sm);
     }
   }
 }
 .service__textarea {
   h3 {
     @media (max-width: 767px) {
-      font-size: calc(20 / 375 * 100vw);
+      font-size: map.get($font-sizes, md);
     }
   }
   p {
     @media (max-width: 767px) {
-      font-size: calc(16 / 375 * 100vw);
+      font-size: map.get($font-sizes, sm);
     }
   }
 }
@@ -651,7 +640,7 @@ label {
     }
   }
   &__text {
-    font-size: clamp(1.2rem, calc(16 / 1080 * 100vw), 1.6rem);
+    font-size: map.get($font-sizes, sm);
     line-height: calc(25 / 16);
     margin-top: 1.9rem;
     @media (max-width: 767px) {
@@ -820,38 +809,13 @@ label {
         line-height: calc(33 / 20);
         font-weight: 600;
         color: $main-color;
-        margin-right: 3.3rem;
         position: relative;
         transition: transform 0.4s;
-        .arrow {
-          width: 8rem;
-          height: 0.1rem;
-          background: $main-color;
-          position: absolute;
-          bottom: 0.4rem;
-          left: 0;
-          span {
-            width: 1.7rem;
-            height: 0.1rem;
-            background: $main-color;
-            position: absolute;
-            right: 0;
-            top: 0;
-            transform: rotate(45deg);
-            transform-origin: right center;
-          }
-          &::before {
-            content: '';
-            width: 0.1rem;
-            height: 1.8rem;
-            background: $main-color;
-            position: absolute;
-            top: -1.2rem;
-            right: 1.2rem;
-          }
-        }
         &:hover {
-          transform: translateX(1rem);
+          transform: translateX(0.5rem);
+        }
+        .arrow {
+          margin-top: -1.5rem;
         }
       }
     }
@@ -860,18 +824,19 @@ label {
 
 // company
 .company {
-  padding: 8rem 3rem;
+  padding: 8rem 3rem 14.2rem;
   @media (max-width: 767px) {
     padding: 5rem 3rem;
   }
-  &__contents {
-    margin-top: 6.8rem;
-    @media (max-width:767px) {
-      margin-top: 3.8rem;
+  &__flex {
+    @media (max-width: 767px) {
+      flex-direction: column;
     }
   }
   &__map {
     &-iframe {
+      position: relative;
+      z-index: 10;
       max-width: 60rem;
       width: clamp(30rem, calc(600 / 980 * 100vw), 60rem);
       aspect-ratio: 600 / 400;
@@ -888,32 +853,26 @@ label {
       }
     }
   }
-  &-textarea {
-    width: 50rem;
-    margin-left: auto;
-    margin-top: -20rem;
-    background-color: $main-color;
-    color: $white;
-    font-weight: 600;
-    @media (max-width: 767px) {
-      margin-top: 2rem;
-      width: 100%;
+  &__contents {
+    margin-top: 6.8rem;
+    position: relative;
+    z-index: 5;
+    @media (max-width:767px) {
+      margin-top: 3.8rem;
     }
-    &--wrapper {
-      display: flex;
-      justify-content: right;
+    &-textarea {
+      width: clamp(38rem, calc(500 / 980 * 100vw), 50rem);
+      margin-top: clamp(18rem, calc(200 / 980 * 100vw), 20rem);
       padding-block: 4.9rem 4.2rem;
-      @media (max-width: 767px) {
-        padding: 1.9rem 2rem 1.2rem;
-        justify-content: left;
-      }
+      padding-left: clamp(20rem, calc(220 / 980 * 100vw), 22rem);
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $main-color;
+      color: $white;
     }
-    &--inner {
-      width: clamp(22.5rem, calc(275 / 980 * 100vw), 27.5rem);
-      @media (max-width: 767px) {
-        width: 100%;
-      }
-    }
+  }
+  &-textarea {
     &__address,
     &__tel .phone,
     &__mail {
@@ -1283,7 +1242,6 @@ label {
       padding-block: 0.8rem 0.7rem;
       display: flex;
       justify-content: center;
-      // align-items: center;
       width: 30rem;
       height: 5rem;
       margin: 0 auto;

@@ -102,9 +102,12 @@ goTop.click(function () {
   return false;
 });
 
+// AOS（教えてもらった部分）
 $(function () {
   AOS.init({
     once: true,
+    duration: 1000,
+    delay: 150,
   });
 });
 
