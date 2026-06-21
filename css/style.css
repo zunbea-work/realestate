@@ -769,7 +769,7 @@ label {
 }
 @media (max-width: 767px) {
   .works__text {
-    font-size: 4.2666666667vw;
+    font-size: 1.6rem;
     margin-top: 0.9rem;
   }
 }

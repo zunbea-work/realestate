@@ -644,7 +644,7 @@ label {
     line-height: calc(25 / 16);
     margin-top: 1.9rem;
     @media (max-width: 767px) {
-      font-size: calc(16 / 375 * 100vw);
+      font-size: map.get($font-sizes, sm);
       margin-top: 0.9rem;
     }
   }
