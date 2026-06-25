@@ -491,11 +491,13 @@ label {
     row-gap: 2.4rem;
   }
 }
-.about__title {
+.about__title, .about__text {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
+}
+.about__title {
   font-size: clamp(2rem, 2.7777777778vw, 3rem);
   line-height: 1;
   letter-spacing: 0.18em;
@@ -509,10 +511,6 @@ label {
   }
 }
 .about__text p {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: upright;
   font-size: clamp(1.3rem, 1.6666666667vw, 1.8rem);
   line-height: 2.6666666667;
   letter-spacing: 0.37em;

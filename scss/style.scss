@@ -425,8 +425,11 @@ label {
       row-gap: 2.4rem;
     }
   }
-  &__title {
+  &__title,
+  &__text {
     @include writing;
+  }
+  &__title {
     font-size: clamp(2rem, calc(30 / 1080 * 100vw), 3rem);
     line-height: calc(30 / 30);
     letter-spacing: 0.18em;
@@ -439,7 +442,6 @@ label {
   }
   &__text {
     p {
-      @include writing;
       font-size: clamp(1.3rem, calc(18 / 1080 * 100vw), 1.8rem);
       line-height: calc(48 / 18);
       letter-spacing: 0.37em;
