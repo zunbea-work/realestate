@@ -206,6 +206,7 @@ label {
   top: 0;
   left: 0;
   z-index: 5000;
+  transition: background-color 0.4s;
   &.change {
     background-color: #4D9600;
   }
@@ -825,7 +826,7 @@ label {
 
 // company
 .company {
-  padding: 8rem 3rem 13.8rem;
+  padding: 8rem 3rem 14.2rem;
   @media (max-width: 767px) {
     padding: 5rem 3rem;
   }
