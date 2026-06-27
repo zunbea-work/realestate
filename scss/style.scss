@@ -412,7 +412,8 @@ label {
   &__textarea {
     position: absolute;
     top: calc(110 / 1080 * 100vw);
-    left: clamp(9rem, calc(135 / 1080 * 100vw), 13.5rem);
+    // left: clamp(9rem, calc(135 / 1080 * 100vw), 13.5rem);
+    left: calc(135 / 1080 * 100vw);
     margin: auto;
     display: flex;
     flex-direction: row-reverse;
@@ -442,15 +443,13 @@ label {
     }
   }
   &__text {
-    p {
-      font-size: clamp(1.3rem, calc(18 / 1080 * 100vw), 1.8rem);
-      line-height: calc(48 / 18);
-      letter-spacing: 0.37em;
-      @media (max-width: 767px) {
-        font-size: calc(16 / 375 * 100vw);
-        line-height: calc(26 / 16);
-        letter-spacing: 0.25em;
-      }
+    font-size: clamp(1.3rem, calc(18 / 1080 * 100vw), 1.8rem);
+    line-height: calc(48 / 18);
+    letter-spacing: 0.37em;
+    @media (max-width: 767px) {
+      font-size: calc(16 / 375 * 100vw);
+      line-height: calc(26 / 16);
+      letter-spacing: 0.25em;
     }
   }
 }

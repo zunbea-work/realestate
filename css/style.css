@@ -463,7 +463,7 @@ label {
 .about__textarea {
   position: absolute;
   top: 10.1851851852vw;
-  left: clamp(9rem, 12.5vw, 13.5rem);
+  left: 12.5vw;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -512,13 +512,13 @@ label {
     letter-spacing: 0.19em;
   }
 }
-.about__text p {
+.about__text {
   font-size: clamp(1.3rem, 1.6666666667vw, 1.8rem);
   line-height: 2.6666666667;
   letter-spacing: 0.37em;
 }
 @media (max-width: 767px) {
-  .about__text p {
+  .about__text {
     font-size: 4.2666666667vw;
     line-height: 1.625;
     letter-spacing: 0.25em;
