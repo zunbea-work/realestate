@@ -411,9 +411,11 @@ label {
   position: relative;
   &__textarea {
     position: absolute;
-    top: calc(110 / 1080 * 100vw);
+    // top: calc(110 / 1080 * 100vw);
+    top: 23%;
     // left: clamp(9rem, calc(135 / 1080 * 100vw), 13.5rem);
     left: calc(135 / 1080 * 100vw);
+    transform: translateY(-50%);
     margin: auto;
     display: flex;
     flex-direction: row-reverse;
