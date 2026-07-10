@@ -463,7 +463,7 @@ label {
 .about__textarea {
   position: absolute;
   top: 23%;
-  left: 12.5vw;
+  left: 13.5rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   margin: auto;

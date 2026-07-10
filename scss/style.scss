@@ -414,7 +414,8 @@ label {
     // top: calc(110 / 1080 * 100vw);
     top: 23%;
     // left: clamp(9rem, calc(135 / 1080 * 100vw), 13.5rem);
-    left: calc(135 / 1080 * 100vw);
+    // left: calc(135 / 1080 * 100vw);
+    left: 13.5rem;
     transform: translateY(-50%);
     margin: auto;
     display: flex;
