@@ -485,7 +485,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  padding-right: 28.8rem;
+  padding-right: 30rem;
 }
 @media (max-width: 767px) {
   .about__textarea-inner {
@@ -1302,6 +1302,7 @@ label {
           transform: translateY(-50%);
   -webkit-transform-origin: center;
           transform-origin: center;
+  pointer-events: none;
 }
 .contact .form-inquiry .form__item-arrow:hover {
   width: 2rem;
@@ -1596,6 +1597,11 @@ label {
 .footer__nav--link {
   font-size: 1.8rem;
   line-height: 1.8333333333;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.footer__nav--link:hover {
+  opacity: 0.7;
 }
 @media (max-width: 767px) {
   .footer__nav--link {
