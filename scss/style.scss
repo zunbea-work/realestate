@@ -412,11 +412,9 @@ label {
       align-items: center;
       height: 100%;
       padding-right: clamp(20rem, calc(300 / 1080 *100vw), 30rem);
-      // padding-left: 14rem;
       @media (max-width: 767px) {
         inset: 0;
         flex-direction: column;
-        padding-left: 0;
         margin: auto;
         row-gap: 2.4rem;
         padding-right: 0;
