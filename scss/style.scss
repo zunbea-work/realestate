@@ -73,17 +73,6 @@ img {
   height: auto;
   display: block;
 }
-a {//ここか・・・？
-  transition: opacity 0.4s;
-
-  &:hover {
-    opacity: 0.7;
-
-    @media (max-width: 767px) {
-      opacity: 1;
-    }
-  }
-}
 .container {
 	width: 100%;
 	overflow: hidden;
@@ -422,10 +411,12 @@ label {
       justify-content: center;
       align-items: center;
       height: 100%;
-      padding-right: 30rem;
+      padding-right: clamp(20rem, calc(300 / 1080 *100vw), 30rem);
+      // padding-left: 14rem;
       @media (max-width: 767px) {
         inset: 0;
         flex-direction: column;
+        padding-left: 0;
         margin: auto;
         row-gap: 2.4rem;
         padding-right: 0;
@@ -886,6 +877,10 @@ label {
     &__mail {
       font-size: clamp(1.2rem, calc(16 / 980 * 100vw), 1.6rem);
       line-height: calc(25 / 16);
+      transition: opacity 0.4s;
+      &:hover {
+        opacity: 0.7;
+      }
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, sm);
       }
@@ -1274,6 +1269,12 @@ label {
 
 // footer
 .footer {
+  a {
+    transition: opacity 0.4s;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
   &__inner {
     padding: 8rem 3rem;
     text-align: center;
@@ -1319,10 +1320,6 @@ label {
     &--link {
       font-size: map.get($font-sizes, no);
       line-height: calc(33 / 18);
-      transition: opacity 0.4s;
-      &:hover {
-        opacity: 0.7;
-      }
       @media (max-width: 767px) {
         font-size: map.get($font-sizes, no);
       }

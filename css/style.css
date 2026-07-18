@@ -45,19 +45,6 @@ img {
   display: block;
 }
 
-a {
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-a:hover {
-  opacity: 0.7;
-}
-@media (max-width: 767px) {
-  a:hover {
-    opacity: 1;
-  }
-}
-
 .container {
   width: 100%;
   overflow: hidden;
@@ -485,7 +472,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  padding-right: 30rem;
+  padding-right: clamp(20rem, 27.7777777778vw, 30rem);
 }
 @media (max-width: 767px) {
   .about__textarea-inner {
@@ -494,6 +481,7 @@ label {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-left: 0;
     margin: auto;
     row-gap: 2.4rem;
     padding-right: 0;
@@ -1054,6 +1042,11 @@ label {
 .company-textarea__address, .company-textarea__tel .phone, .company-textarea__mail {
   font-size: clamp(1.2rem, 1.6326530612vw, 1.6rem);
   line-height: 1.5625;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.company-textarea__address:hover, .company-textarea__tel .phone:hover, .company-textarea__mail:hover {
+  opacity: 0.7;
 }
 @media (max-width: 767px) {
   .company-textarea__address, .company-textarea__tel .phone, .company-textarea__mail {
@@ -1532,6 +1525,13 @@ label {
   color: #4D9600;
 }
 
+.footer a {
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.footer a:hover {
+  opacity: 0.7;
+}
 .footer__inner {
   padding: 8rem 3rem;
   text-align: center;
@@ -1597,11 +1597,6 @@ label {
 .footer__nav--link {
   font-size: 1.8rem;
   line-height: 1.8333333333;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-.footer__nav--link:hover {
-  opacity: 0.7;
 }
 @media (max-width: 767px) {
   .footer__nav--link {
